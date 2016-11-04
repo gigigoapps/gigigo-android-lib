@@ -30,37 +30,48 @@ import android.widget.Toast;
 
 public class PermissionsUIViews {
 
-  @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-  public static void showRationaleView(final RationaleResponse rationaleResponse, Context context,
-      int rationaleTitleStringId, int rationaleMessageStringId) {
-    new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
-        .setMessage(rationaleMessageStringId)
-        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-          @Override public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-            rationaleResponse.cancelPermissionRequest();
-          }
-        }).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-      @Override public void onClick(DialogInterface dialog, int which) {
-        dialog.dismiss();
-        rationaleResponse.continuePermissionRequest();
-      }
-    }).setOnDismissListener(new DialogInterface.OnDismissListener() {
-      @Override public void onDismiss(DialogInterface dialog) {
-        rationaleResponse.cancelPermissionRequest();
-      }
-    }).show();
-  }
-
-  public static void showPermissionToast(Context context, int stringId){
-    Toast.makeText(context, stringId, Toast.LENGTH_LONG).show();
-  }
-
-  public static ViewGroup getAppContainer(Activity activity) throws NullContainerException{
-    if (activity!=null){
-      return (ViewGroup) activity.findViewById(android.R.id.content);
-    }else{
-      throw new NullContainerException("Container is null");
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public static void showRationaleView(final RationaleResponse rationaleResponse, Context context,
+                                         int rationaleTitleStringId, int rationaleMessageStringId) {
+        new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
+                .setMessage(rationaleMessageStringId)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        rationaleResponse.cancelPermissionRequest();
+                    }
+                }).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                rationaleResponse.continuePermissionRequest();
+            }
+        }).setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                rationaleResponse.cancelPermissionRequest();
+            }
+        }).show();
     }
-  }
+
+    public static void showPermissionToast(Context context, int stringId) {
+        Toast.makeText(context, stringId, Toast.LENGTH_LONG).show();
+    }
+
+    public static ViewGroup getAppContainer(Activity activity) throws NullContainerException {
+        ViewGroup vg;
+        if (activity != null) {
+            vg = (ViewGroup) activity.findViewById(android.R.id.content);
+            if (vg == null)
+                vg = (ViewGroup) activity.getWindow().getDecorView().getRootView();
+
+            if (vg != null)
+                return vg;
+            else
+                throw new NullContainerException("Container is null");
+        } else {
+            throw new NullContainerException("Container is null");
+        }
+    }
 }

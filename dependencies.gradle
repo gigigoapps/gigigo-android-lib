@@ -21,7 +21,7 @@ allprojects {
     dependencies = [
                     retrofit                   : 'com.squareup.retrofit2:retrofit:2.0.2',
                     gsonConverter              : 'com.squareup.retrofit2:converter-gson:2.0.2',
-                    permissionsModule          : 'com.github.GigigoGreenLabs:permissionsModule:1.0'
+                    permissionsModule          : 'com.github.GigigoGreenLabs:permissionsModule:1.1'
     ]
 
     testDependencies = [mockito      : 'org.mockito:mockito-core:2.0.31-beta',
