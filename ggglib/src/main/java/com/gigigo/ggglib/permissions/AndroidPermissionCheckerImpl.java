@@ -66,13 +66,16 @@ public class AndroidPermissionCheckerImpl implements PermissionChecker {
 
   private PermissionListener[] createListeners(Permission permission,
       UserPermissionRequestResponseListener userResponse, Activity activity) {
-
     PermissionListener basicListener = getPermissionListenerImpl(permission, userResponse);
-
     try {
       ViewGroup viewGroup = PermissionsUIViews.getAppContainer(activity);
       PermissionListener listener = getDefaultDeniedPermissionListener(viewGroup, permission);
-      return new PermissionListener[] { basicListener, listener };
+      if (listener != null)
+      {
+        return new PermissionListener[] { basicListener, listener };
+      } else {
+        return new PermissionListener[] { basicListener };
+      }
     } catch (NullContainerException n) {
       return new PermissionListener[] { basicListener };
     }
@@ -80,7 +83,9 @@ public class AndroidPermissionCheckerImpl implements PermissionChecker {
 
   private PermissionListener getDefaultDeniedPermissionListener(ViewGroup rootView,
       Permission permission) {
-    return null;
+    PermissionListener basicListener = getPermissionListenerImpl(permission, null);
+    return basicListener;
+    // return null;
     //return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
     //        permission.getPermissionRationaleMessage())
     //         .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
