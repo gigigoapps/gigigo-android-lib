@@ -17,5 +17,5 @@
   -->
 
 <resources>
-  <string name="app_name">GGGLogger</string>
+  <string name="app_name_ggglib">GGGLogger</string>
 </resources>

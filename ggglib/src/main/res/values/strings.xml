@@ -17,7 +17,7 @@
   -->
 
 <resources>
-  <string name="app_name">gggLib</string>
+  <string name="app_name_ggglib">gggLib</string>
 
   <string name="continueRequestPermissionAllowedFeedback">All permissions have been allowed</string>
   <string name="continueRequestPermissionSettingsDeniedFeedback">SETTINGS</string>

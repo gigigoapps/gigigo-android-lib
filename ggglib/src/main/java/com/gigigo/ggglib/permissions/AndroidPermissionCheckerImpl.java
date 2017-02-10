@@ -21,7 +21,8 @@ package com.gigigo.ggglib.permissions;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.support.v4ox.content.ContextCompat;
+//import android.support.v4ox.content.ContextCompat;
+import android.support.permissions.ContextCompat;
 import android.view.ViewGroup;
 
 import com.gigigo.ggglib.ContextProvider;
@@ -87,7 +88,7 @@ public class AndroidPermissionCheckerImpl implements PermissionChecker {
 
         return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
                 permission.getPermissionRationaleMessage())
-                .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback())
+               // .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
                 .build();
     }
 
