@@ -31,70 +31,65 @@ import com.karumi.dexterox.listener.single.CompositePermissionListener;
 import com.karumi.dexterox.listener.single.PermissionListener;
 import com.karumi.dexterox.listener.single.SnackbarOnDeniedPermissionListener;
 
-
 public class AndroidPermissionCheckerImpl implements PermissionChecker {
 
-    private final ContextProvider contextProvider;
+  private final ContextProvider contextProvider;
 
-    public AndroidPermissionCheckerImpl(Context context, ContextProvider contextProvider) {
-        Dexter.initialize(context);
-        this.contextProvider = contextProvider;
+  public AndroidPermissionCheckerImpl(Context context, ContextProvider contextProvider) {
+    Dexter.initialize(context);
+    this.contextProvider = contextProvider;
+  }
+
+  @Override public void askForPermission(Permission permission,
+      UserPermissionRequestResponseListener userResponse, Activity activity) {
+    if (Dexter.isRequestOngoing()) {
+      return;
     }
 
-    @Override
-    public void askForPermission(Permission permission,
-                                 UserPermissionRequestResponseListener userResponse, Activity activity) {
-        if (Dexter.isRequestOngoing()) {
-            return;
-        }
+    PermissionListener[] listeners = createListeners(permission, userResponse, activity);
 
-        PermissionListener[] listeners = createListeners(permission, userResponse, activity);
+    Dexter.checkPermission(new CompositePermissionListener(listeners),
+        permission.getAndroidPermissionStringType());
+  }
 
-        Dexter.checkPermission(new CompositePermissionListener(listeners),
-                permission.getAndroidPermissionStringType());
+  @Override public void continuePendingPermissionsRequestsIfPossible() {
+    Dexter.continuePendingRequestIfPossible(
+        new ContinueRequestPermissionListenerImpl(contextProvider));
+  }
 
+  @Override public boolean isGranted(Permission permission) {
+    Context context = contextProvider.getApplicationContext();
+    int permissionGranted =
+        ContextCompat.checkSelfPermission(context, permission.getAndroidPermissionStringType());
+    return PackageManager.PERMISSION_GRANTED == permissionGranted;
+  }
+
+  private PermissionListener[] createListeners(Permission permission,
+      UserPermissionRequestResponseListener userResponse, Activity activity) {
+
+    PermissionListener basicListener = getPermissionListenerImpl(permission, userResponse);
+
+    try {
+      ViewGroup viewGroup = PermissionsUIViews.getAppContainer(activity);
+      PermissionListener listener = getDefaultDeniedPermissionListener(viewGroup, permission);
+      return new PermissionListener[] { basicListener, listener };
+    } catch (NullContainerException n) {
+      return new PermissionListener[] { basicListener };
     }
+  }
 
-    @Override
-    public void continuePendingPermissionsRequestsIfPossible() {
-        Dexter.continuePendingRequestIfPossible(new ContinueRequestPermissionListenerImpl(contextProvider));
-    }
+  private PermissionListener getDefaultDeniedPermissionListener(ViewGroup rootView,
+      Permission permission) {
+    return null;
+    //return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
+    //        permission.getPermissionRationaleMessage())
+    //         .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
+    //        .build();
+  }
 
-    @Override
-    public boolean isGranted(Permission permission) {
-        Context context = contextProvider.getApplicationContext();
-        int permissionGranted = ContextCompat.checkSelfPermission(context,
-                permission.getAndroidPermissionStringType());
-        return PackageManager.PERMISSION_GRANTED == permissionGranted;
-
-    }
-
-    private PermissionListener[] createListeners(Permission permission,
-                                                 UserPermissionRequestResponseListener userResponse, Activity activity) {
-
-        PermissionListener basicListener = getPermissionListenerImpl(permission, userResponse);
-
-        try {
-            ViewGroup viewGroup = PermissionsUIViews.getAppContainer(activity);
-            PermissionListener listener = getDefaultDeniedPermissionListener(viewGroup, permission);
-            return new PermissionListener[]{basicListener, listener};
-        } catch (NullContainerException n) {
-            return new PermissionListener[]{basicListener};
-        }
-    }
-
-    private PermissionListener getDefaultDeniedPermissionListener(ViewGroup rootView,
-                                                                  Permission permission) {
-
-        return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
-                permission.getPermissionRationaleMessage())
-               // .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
-                .build();
-    }
-
-    private PermissionListener getPermissionListenerImpl(final Permission permission,
-                                                         final UserPermissionRequestResponseListener userPermissionRequestResponseListener) {
-        return new GenericPermissionListenerImpl(permission, userPermissionRequestResponseListener, contextProvider);
-    }
-
+  private PermissionListener getPermissionListenerImpl(final Permission permission,
+      final UserPermissionRequestResponseListener userPermissionRequestResponseListener) {
+    return new GenericPermissionListenerImpl(permission, userPermissionRequestResponseListener,
+        contextProvider);
+  }
 }
