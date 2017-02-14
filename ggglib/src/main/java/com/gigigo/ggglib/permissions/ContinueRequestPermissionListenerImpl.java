@@ -38,4 +38,12 @@ public class ContinueRequestPermissionListenerImpl extends AbstractPermissionLis
   @Override public int getPermissionRationaleTitle() {
     return R.string.continueRequestPermissionRationaleTitle;
   }
+
+  @Override public int getNumRetry() {
+    return 0;
+  }
+
+  @Override public int getPermissionSettingsDeniedFeedback() {
+    return R.string.continueRequestPermissionSettingsDeniedFeedback;
+  }
 }

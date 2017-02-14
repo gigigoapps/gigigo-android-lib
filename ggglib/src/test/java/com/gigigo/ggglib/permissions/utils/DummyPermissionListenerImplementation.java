@@ -1,5 +1,6 @@
 package com.gigigo.ggglib.permissions.utils;
 
+import com.gigigo.ggglib.R;
 import com.gigigo.ggglib.permissions.AbstractPermissionListener;
 import com.gigigo.ggglib.ContextProvider;
 import com.gigigo.ggglib.permissions.UserPermissionRequestResponseListener;
@@ -34,4 +35,11 @@ public class DummyPermissionListenerImplementation extends AbstractPermissionLis
     return stubString.getPermissionRationaleTitle();
   }
 
+  @Override public int getNumRetry() {
+    return 0;
+  }
+
+  @Override public int getPermissionSettingsDeniedFeedback() {
+    return R.string.continueRequestPermissionSettingsDeniedFeedback;
+  }
 }

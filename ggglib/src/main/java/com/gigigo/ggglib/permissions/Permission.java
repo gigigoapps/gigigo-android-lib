@@ -18,7 +18,6 @@
 
 package com.gigigo.ggglib.permissions;
 
-
 public interface Permission {
   String getAndroidPermissionStringType();
 
@@ -29,4 +28,6 @@ public interface Permission {
   int getPermissionRationaleTitle();
 
   int getPermissionRationaleMessage();
+
+  int getNumRetry();
 }

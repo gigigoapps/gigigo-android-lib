@@ -36,12 +36,21 @@ public class GenericPermissionListenerImpl extends AbstractPermissionListener{
     return permission.getPermissionDeniedFeedback();
   }
 
+
   @Override public int getPermissionRationaleMessage() {
     return permission.getPermissionRationaleMessage();
   }
 
   @Override public int getPermissionRationaleTitle() {
     return permission.getPermissionRationaleTitle();
+  }
+
+  @Override public int getNumRetry() {
+    return permission.getNumRetry();
+  }
+
+  @Override public int getPermissionSettingsDeniedFeedback() {
+    return  permission.getPermissionSettingsDeniedFeedback();
   }
 }
 

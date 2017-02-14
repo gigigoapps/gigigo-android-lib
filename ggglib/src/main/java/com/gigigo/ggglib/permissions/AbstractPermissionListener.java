@@ -19,13 +19,15 @@
 package com.gigigo.ggglib.permissions;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.widget.Toast;
 import com.gigigo.ggglib.ContextProvider;
 import com.karumi.dexterox.PermissionToken;
 import com.karumi.dexterox.listener.PermissionDeniedResponse;
 import com.karumi.dexterox.listener.PermissionGrantedResponse;
 import com.karumi.dexterox.listener.PermissionRequest;
 import com.karumi.dexterox.listener.single.PermissionListener;
-
 
 public abstract class AbstractPermissionListener implements PermissionListener {
 
@@ -36,38 +38,45 @@ public abstract class AbstractPermissionListener implements PermissionListener {
     this.contextProvider = contextProvider;
   }
 
-  public AbstractPermissionListener(UserPermissionRequestResponseListener
-      userPermissionRequestResponseListener, ContextProvider contextProvider) {
+  public AbstractPermissionListener(
+      UserPermissionRequestResponseListener userPermissionRequestResponseListener,
+      ContextProvider contextProvider) {
     this.userPermissionRequestResponseListener = userPermissionRequestResponseListener;
     this.contextProvider = contextProvider;
   }
 
   @Override public void onPermissionGranted(PermissionGrantedResponse response) {
-    if (userPermissionRequestResponseListener!=null){
+    if (userPermissionRequestResponseListener != null) {
       userPermissionRequestResponseListener.onPermissionAllowed(true);
     }
   }
 
   @Override public void onPermissionDenied(PermissionDeniedResponse response) {
-    if (!contextProvider.isActivityContextAvailable()){
-      PermissionsUIViews.showPermissionToast(contextProvider.getApplicationContext(),
-          getPermissionDeniedFeedback());
-    }
+    //
 
-    if (userPermissionRequestResponseListener!=null){
+    if (userPermissionRequestResponseListener != null) {
       userPermissionRequestResponseListener.onPermissionAllowed(false);
     }
-
   }
 
   @Override public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest,
       PermissionToken token) {
 
-    if (contextProvider.isActivityContextAvailable()){
-      Context context = contextProvider.getCurrentActivity();
-      PermissionsUIViews.showRationaleView(createRationaleResponseInstance(token), context,
+    RationaleResponse rationaleResponse = createRationaleResponseInstance(token);//
+
+    Context context = contextProvider.getCurrentActivity();
+    if (showSettingsDialog()) {
+      PermissionsUIViews.showRationaleView(rationaleResponse, context,
           getPermissionRationaleTitle(), getPermissionRationaleMessage());
     }
+
+    if (getNumRetry() > 0 && getNumRetry() == readNumRetryDone()) {
+      PermissionsUIViews.showSettingsView(context,getPermissionRationaleTitle(), getPermissionSettingsDeniedFeedback(),
+          getPermissionDeniedFeedback());
+        //  only show this one time, the next writeNewretry
+    }
+
+    if (getNumRetry() > 0) writeNewRetry();
   }
 
   private RationaleResponse createRationaleResponseInstance(final PermissionToken token) {
@@ -83,7 +92,82 @@ public abstract class AbstractPermissionListener implements PermissionListener {
   }
 
   public abstract int getPermissionDeniedFeedback();
+
   public abstract int getPermissionRationaleMessage();
+
   public abstract int getPermissionRationaleTitle();
 
+  public abstract int getNumRetry() ;
+
+  public abstract  int getPermissionSettingsDeniedFeedback();
+  /*NEW retrys*/
+  public String calculateHashCodeKey() {
+    String hashcode = this.hashCode() + "";
+    return hashcode;
+  }
+
+  private void writeNewRetry() {
+    if (contextProvider.getCurrentActivity() != null) {
+
+      String prefKey = calculateHashCodeKey();
+      SharedPreferences sharedPref =
+          contextProvider.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
+      int defaultValue = 0;
+      int numRetrys = sharedPref.getInt(prefKey, defaultValue);
+
+      numRetrys = numRetrys + 1;
+      SharedPreferences.Editor editor = sharedPref.edit();
+      editor.putInt(prefKey, numRetrys);
+      editor.commit();
+    }
+  }
+
+  private int readNumRetryDone() {
+    if (contextProvider.getCurrentActivity() != null) {
+
+      String prefKey = calculateHashCodeKey();
+      SharedPreferences sharedPref =
+          contextProvider.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
+      int defaultValue = 0;
+      int numRetrys = sharedPref.getInt(prefKey, defaultValue);
+
+      return numRetrys;
+    }
+    return 0;
+  }
+
+  private boolean showSettingsDialog() {
+
+    if (getNumRetry() == -1) return true; //infinite retries
+
+    if (getNumRetry() == 0) return false; //no one retries
+    if (getNumRetry() > readNumRetryDone()) { //check retries
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+
+  /****
+   * calculate hashcode from permission for create key in preferences and counts retries
+   */
+  public int hashCode() {
+    int megaHash = 0;
+    try {
+      megaHash = hashCodeObject(this.getPermissionDeniedFeedback());
+      megaHash = megaHash + hashCodeObject(this.getPermissionRationaleMessage());
+      megaHash = megaHash + hashCodeObject(this.getPermissionRationaleTitle());
+    } catch (Exception e) {
+      Log.i("ERROR ", e.getMessage());
+    } catch (Throwable throwable) {
+      Log.i("ERROR ", throwable.getMessage());
+    }
+    return megaHash;
+  }
+
+  public static int hashCodeObject(Object o) {
+    return (o == null) ? 0 : o.hashCode();
+  }
 }

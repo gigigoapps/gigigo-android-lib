@@ -21,15 +21,13 @@ package com.gigigo.ggglib.permissions;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-//import android.support.v4ox.content.ContextCompat;
-import android.support.permissions.ContextCompat;
 import android.view.ViewGroup;
+import android.support.v4ox.content.ContextCompat;
 
 import com.gigigo.ggglib.ContextProvider;
 import com.karumi.dexterox.Dexter;
 import com.karumi.dexterox.listener.single.CompositePermissionListener;
 import com.karumi.dexterox.listener.single.PermissionListener;
-import com.karumi.dexterox.listener.single.SnackbarOnDeniedPermissionListener;
 
 public class AndroidPermissionCheckerImpl implements PermissionChecker {
 
@@ -68,29 +66,31 @@ public class AndroidPermissionCheckerImpl implements PermissionChecker {
       UserPermissionRequestResponseListener userResponse, Activity activity) {
     PermissionListener basicListener = getPermissionListenerImpl(permission, userResponse);
     try {
-      ViewGroup viewGroup = PermissionsUIViews.getAppContainer(activity);
+      return new PermissionListener[] { basicListener };
+    /*  ViewGroup viewGroup = PermissionsUIViews.getAppContainer(activity);
       PermissionListener listener = getDefaultDeniedPermissionListener(viewGroup, permission);
-      if (listener != null)
-      {
+
+      listener = null;
+      if (listener != null) {
         return new PermissionListener[] { basicListener, listener };
       } else {
         return new PermissionListener[] { basicListener };
-      }
+      }*/
     } catch (NullContainerException n) {
       return new PermissionListener[] { basicListener };
     }
   }
 
-  private PermissionListener getDefaultDeniedPermissionListener(ViewGroup rootView,
-      Permission permission) {
-    PermissionListener basicListener = getPermissionListenerImpl(permission, null);
-    return basicListener;
-    // return null;
-    //return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
-    //        permission.getPermissionRationaleMessage())
-    //         .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
-    //        .build();
-  }
+  //private PermissionListener getDefaultDeniedPermissionListener(ViewGroup rootView,
+  //    Permission permission) {
+  //  PermissionListener basicListener = getPermissionListenerImpl(permission, null);
+  //  return basicListener;
+  //  // return null;
+  //  //return SnackbarOnDeniedPermissionListener.Builder.with(rootView,
+  //  //        permission.getPermissionRationaleMessage())
+  //  //         .withOpenSettingsButton(permission.getPermissionSettingsDeniedFeedback()) //asv avoid settings dialog
+  //  //        .build();
+  //}
 
   private PermissionListener getPermissionListenerImpl(final Permission permission,
       final UserPermissionRequestResponseListener userPermissionRequestResponseListener) {
