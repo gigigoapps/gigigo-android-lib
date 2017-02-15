@@ -129,6 +129,12 @@ public class PermissionsUIViews {
               context.startActivity(myAppSettings);
             }
           })
+          .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+              dialog.dismiss();
+            }
+          })
+
           .setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override public void onDismiss(DialogInterface dialog) {
               dialog.dismiss();
