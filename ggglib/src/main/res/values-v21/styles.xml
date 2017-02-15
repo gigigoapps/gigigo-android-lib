@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--<style name="Theme">-->
+
+    <!--<item name="isLightTheme">false</item>-->
+    <!--<item name="colorForeground">@color/bright_foreground_dark</item>-->
+    <!--<item name="colorForegroundInverse">@color/bright_foreground_dark_inverse</item>-->
+    <!--<item name="colorBackground">@color/background_dark</item>-->
+    <!--<item name="colorBackgroundFloating">?attr/colorBackground</item>-->
+    <!--<item name="colorBackgroundCacheHint">?attr/colorBackground</item>-->
+
+    <!--<item name="colorPressedHighlight">@color/legacy_pressed_highlight</item>-->
+    <!--<item name="colorLongPressedHighlight">@color/legacy_long_pressed_highlight</item>-->
+    <!--<item name="colorFocusedHighlight">@color/legacy_selected_highlight</item>-->
+    <!--<item name="colorMultiSelectHighlight">@color/legacy_selected_highlight</item>-->
+    <!--<item name="colorActivatedHighlight">@color/legacy_selected_highlight</item>-->
+
+    <!--<item name="colorPrimaryDark">@color/legacy_primary_dark</item>-->
+    <!--<item name="colorPrimary">@color/legacy_primary</item>-->
+    <!--<item name="colorControlActivated">@color/legacy_control_activated</item>-->
+    <!--<item name="colorControlNormal">@color/legacy_control_normal</item>-->
+    <!--<item name="colorControlHighlight">@color/legacy_button_pressed</item>-->
+    <!--<item name="colorButtonNormal">@color/legacy_button_normal</item>-->
+    <!--<item name="colorEdgeEffect">?attr/colorPrimary</item>-->
+
+    <!--<item name="disabledAlpha">0.5</item>-->
+    <!--<item name="backgroundDimAmount">0.6</item>-->
+
+    <!--&lt;!&ndash; Text styles &ndash;&gt;-->
+    <!--<item name="textAppearance">@style/TextAppearance</item>-->
+    <!--<item name="textAppearanceInverse">@style/TextAppearance.Inverse</item>-->
+
+    <!--<item name="textColorPrimary">@color/primary_text_dark</item>-->
+    <!--<item name="textColorSecondary">@color/secondary_text_dark</item>-->
+    <!--<item name="textColorTertiary">@color/tertiary_text_dark</item>-->
+    <!--<item name="textColorPrimaryInverse">@color/primary_text_light</item>-->
+    <!--<item name="textColorSecondaryInverse">@color/secondary_text_light</item>-->
+    <!--<item name="textColorTertiaryInverse">@color/tertiary_text_light</item>-->
+    <!--<item name="textColorPrimaryActivated">@color/primary_text_dark</item>-->
+    <!--<item name="textColorSecondaryActivated">@color/secondary_text_dark</item>-->
+    <!--<item name="textColorPrimaryDisableOnly">@color/primary_text_dark_disable_only</item>-->
+    <!--<item name="textColorPrimaryInverseDisableOnly">@color/primary_text_light_disable_only</item>-->
+    <!--<item name="textColorPrimaryNoDisable">@color/primary_text_dark_nodisable</item>-->
+    <!--<item name="textColorSecondaryNoDisable">@color/secondary_text_dark_nodisable</item>-->
+    <!--<item name="textColorPrimaryInverseNoDisable">@color/primary_text_light_nodisable</item>-->
+    <!--<item name="textColorSecondaryInverseNoDisable">@color/secondary_text_light_nodisable</item>-->
+    <!--<item name="textColorHint">@color/hint_foreground_dark</item>-->
+    <!--<item name="textColorHintInverse">@color/hint_foreground_light</item>-->
+    <!--<item name="textColorSearchUrl">@color/search_url_text</item>-->
+    <!--<item name="textColorHighlight">@color/highlighted_text_dark</item>-->
+    <!--<item name="textColorHighlightInverse">@color/highlighted_text_light</item>-->
+    <!--<item name="textColorLink">@color/link_text_dark</item>-->
+    <!--<item name="textColorLinkInverse">@color/link_text_light</item>-->
+    <!--<item name="textColorAlertDialogListItem">@color/primary_text_light_disable_only</item>-->
+
+    <!--<item name="textAppearanceLarge">@style/TextAppearance.Large</item>-->
+    <!--<item name="textAppearanceMedium">@style/TextAppearance.Medium</item>-->
+    <!--<item name="textAppearanceSmall">@style/TextAppearance.Small</item>-->
+    <!--<item name="textAppearanceLargeInverse">@style/TextAppearance.Large.Inverse</item>-->
+    <!--<item name="textAppearanceMediumInverse">@style/TextAppearance.Medium.Inverse</item>-->
+    <!--<item name="textAppearanceSmallInverse">@style/TextAppearance.Small.Inverse</item>-->
+    <!--<item name="textAppearanceSearchResultTitle">@style/TextAppearance.SearchResult.Title</item>-->
+    <!--<item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.SearchResult.Subtitle</item>-->
+
+    <!--<item name="textAppearanceEasyCorrectSuggestion">@style/TextAppearance.EasyCorrectSuggestion</item>-->
+    <!--<item name="textAppearanceMisspelledSuggestion">@style/TextAppearance.MisspelledSuggestion</item>-->
+    <!--<item name="textAppearanceAutoCorrectionSuggestion">@style/TextAppearance.AutoCorrectionSuggestion</item>-->
+
+    <!--<item name="textAppearanceButton">@style/TextAppearance.Widget.Button</item>-->
+
+    <!--<item name="editTextColor">@color/primary_text_light</item>-->
+    <!--<item name="editTextBackground">@drawable/edit_text</item>-->
+
+    <!--<item name="candidatesTextStyleSpans">@string/candidates_style</item>-->
+
+    <!--<item name="textCheckMark">@drawable/indicator_check_mark_dark</item>-->
+    <!--<item name="textCheckMarkInverse">@drawable/indicator_check_mark_light</item>-->
+
+    <!--<item name="textAppearanceLargePopupMenu">@style/TextAppearance.Widget.PopupMenu.Large</item>-->
+    <!--<item name="textAppearanceSmallPopupMenu">@style/TextAppearance.Widget.PopupMenu.Small</item>-->
+
+    <!--&lt;!&ndash; Button styles &ndash;&gt;-->
+    <!--<item name="buttonStyle">@style/Widget.Button</item>-->
+    <!--<item name="buttonStyleSmall">@style/Widget.Button.Small</item>-->
+    <!--<item name="buttonStyleInset">@style/Widget.Button.Inset</item>-->
+    <!--<item name="buttonStyleToggle">@style/Widget.Button.Toggle</item>-->
+
+    <!--<item name="switchStyle">@style/Widget.CompoundButton.Switch</item>-->
+
+    <!--<item name="selectableItemBackground">@drawable/item_background</item>-->
+    <!--<item name="selectableItemBackgroundBorderless">?attr/selectableItemBackground</item>-->
+    <!--<item name="borderlessButtonStyle">?attr/buttonStyle</item>-->
+    <!--<item name="homeAsUpIndicator">@drawable/ic_ab_back_holo_dark</item>-->
+
+    <!--&lt;!&ndash; List attributes &ndash;&gt;-->
+    <!--<item name="listPreferredItemHeight">64dip</item>-->
+    <!--<item name="listPreferredItemHeightSmall">?attr/listPreferredItemHeight</item>-->
+    <!--<item name="listPreferredItemHeightLarge">?attr/listPreferredItemHeight</item>-->
+    <!--<item name="dropdownListPreferredItemHeight">?attr/listPreferredItemHeight</item>-->
+    <!--<item name="textAppearanceListItem">?attr/textAppearanceLarge</item>-->
+    <!--<item name="textAppearanceListItemSmall">?attr/textAppearanceLarge</item>-->
+    <!--<item name="textAppearanceListItemSecondary">?attr/textAppearanceSmall</item>-->
+    <!--<item name="listPreferredItemPaddingLeft">6dip</item>-->
+    <!--<item name="listPreferredItemPaddingRight">6dip</item>-->
+    <!--<item name="listPreferredItemPaddingStart">6dip</item>-->
+    <!--<item name="listPreferredItemPaddingEnd">6dip</item>-->
+
+    <!--&lt;!&ndash; @hide &ndash;&gt;-->
+    <!--<item name="searchResultListItemHeight">58dip</item>-->
+    <!--<item name="listDivider">@drawable/divider_horizontal_dark</item>-->
+    <!--<item name="listSeparatorTextViewStyle">@style/Widget.TextView.ListSeparator</item>-->
+
+    <!--<item name="listChoiceIndicatorSingle">@drawable/btn_radio</item>-->
+    <!--<item name="listChoiceIndicatorMultiple">@drawable/btn_check</item>-->
+
+    <!--<item name="listChoiceBackgroundIndicator">@drawable/list_selector_background</item>-->
+
+    <!--<item name="activatedBackgroundIndicator">@drawable/activated_background</item>-->
+
+    <!--<item name="listDividerAlertDialog">@drawable/divider_horizontal_bright</item>-->
+
+    <!--<item name="expandableListPreferredItemPaddingLeft">40dip</item>-->
+    <!--<item name="expandableListPreferredChildPaddingLeft">?attr/expandableListPreferredItemPaddingLeft</item>-->
+
+    <!--<item name="expandableListPreferredItemIndicatorLeft">3dip</item>-->
+    <!--<item name="expandableListPreferredItemIndicatorRight">0dip</item>-->
+    <!--<item name="expandableListPreferredChildIndicatorLeft">?attr/expandableListPreferredItemIndicatorLeft</item>-->
+    <!--<item name="expandableListPreferredChildIndicatorRight">?attr/expandableListPreferredItemIndicatorRight</item>-->
+    <!--<item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_dark</item>-->
+    <!--<item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_dark</item>-->
+
+    <!--&lt;!&ndash; Gallery attributes &ndash;&gt;-->
+    <!--<item name="galleryItemBackground">@drawable/gallery_item_background</item>-->
+
+    <!--&lt;!&ndash; Window attributes &ndash;&gt;-->
+    <!--<item name="windowBackground">@drawable/screen_background_selector_dark</item>-->
+    <!--<item name="windowBackgroundFallback">?attr/colorBackground</item>-->
+    <!--<item name="windowClipToOutline">false</item>-->
+    <!--<item name="windowFrame">@null</item>-->
+    <!--<item name="windowNoTitle">false</item>-->
+    <!--<item name="windowFullscreen">false</item>-->
+    <!--<item name="windowOverscan">false</item>-->
+    <!--<item name="windowIsFloating">false</item>-->
+    <!--<item name="windowContentOverlay">@null</item>-->
+    <!--<item name="windowShowWallpaper">false</item>-->
+    <!--<item name="windowTitleStyle">@style/WindowTitle</item>-->
+    <!--<item name="windowTitleSize">25dip</item>-->
+    <!--<item name="windowTitleBackgroundStyle">@style/WindowTitleBackground</item>-->
+    <!--<item name="windowAnimationStyle">@style/Animation.Activity</item>-->
+    <!--<item name="windowSoftInputMode">stateUnspecified|adjustUnspecified</item>-->
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="windowActionModeOverlay">false</item>-->
+    <!--<item name="windowCloseOnTouchOutside">false</item>-->
+    <!--<item name="windowTranslucentStatus">false</item>-->
+    <!--<item name="windowTranslucentNavigation">false</item>-->
+    <!--<item name="windowDrawsSystemBarBackgrounds">false</item>-->
+    <!--<item name="statusBarColor">@color/black</item>-->
+    <!--<item name="navigationBarColor">@color/black</item>-->
+    <!--<item name="windowActionBarFullscreenDecorLayout">@layout/screen_action_bar</item>-->
+    <!--<item name="windowContentTransitions">false</item>-->
+    <!--<item name="windowActivityTransitions">false</item>-->
+
+    <!--&lt;!&ndash; Define these here; ContextThemeWrappers around themes that define them should-->
+         <!--always clear these values. &ndash;&gt;-->
+    <!--<item name="windowFixedWidthMajor">0dp</item>-->
+    <!--<item name="windowFixedWidthMinor">0dp</item>-->
+    <!--<item name="windowFixedHeightMajor">0dp</item>-->
+    <!--<item name="windowFixedHeightMinor">0dp</item>-->
+
+    <!--&lt;!&ndash; Dialog attributes &ndash;&gt;-->
+    <!--<item name="dialogTheme">@style/Theme.Dialog</item>-->
+    <!--<item name="dialogTitleIconsDecorLayout">@layout/dialog_title_icons</item>-->
+    <!--<item name="dialogCustomTitleDecorLayout">@layout/dialog_custom_title</item>-->
+    <!--<item name="dialogTitleDecorLayout">@layout/dialog_title</item>-->
+    <!--<item name="dialogPreferredPadding">@dimen/dialog_padding</item>-->
+
+    <!--&lt;!&ndash; AlertDialog attributes &ndash;&gt;-->
+    <!--<item name="alertDialogTheme">@style/Theme.Dialog.Alert</item>-->
+    <!--<item name="alertDialogStyle">@style/AlertDialog</item>-->
+    <!--<item name="alertDialogCenterButtons">true</item>-->
+    <!--<item name="alertDialogIcon">@drawable/ic_dialog_alert</item>-->
+
+    <!--&lt;!&ndash; Presentation attributes (introduced after API level 10 so does not-->
+         <!--have a special old-style theme. &ndash;&gt;-->
+    <!--<item name="presentationTheme">@style/Theme.DeviceDefault.Dialog.Presentation</item>-->
+
+    <!--&lt;!&ndash; Toast attributes &ndash;&gt;-->
+    <!--<item name="toastFrameBackground">@drawable/toast_frame</item>-->
+
+    <!--&lt;!&ndash; Panel attributes &ndash;&gt;-->
+    <!--<item name="panelBackground">@drawable/menu_background</item>-->
+    <!--<item name="panelFullBackground">@drawable/menu_background_fill_parent_width</item>-->
+    <!--&lt;!&ndash; These three attributes do not seems to be used by the framework. Declared public though &ndash;&gt;-->
+    <!--<item name="panelColorBackground">#000</item>-->
+    <!--<item name="panelColorForeground">?attr/textColorPrimary</item>-->
+    <!--<item name="panelTextAppearance">?attr/textAppearance</item>-->
+
+    <!--<item name="panelMenuIsCompact">false</item>-->
+    <!--<item name="panelMenuListWidth">296dip</item>-->
+
+    <!--&lt;!&ndash; Scrollbar attributes &ndash;&gt;-->
+    <!--<item name="scrollbarFadeDuration">250</item>-->
+    <!--<item name="scrollbarDefaultDelayBeforeFade">300</item>-->
+    <!--<item name="scrollbarSize">10dip</item>-->
+    <!--<item name="scrollbarThumbHorizontal">@drawable/scrollbar_handle_horizontal</item>-->
+    <!--<item name="scrollbarThumbVertical">@drawable/scrollbar_handle_vertical</item>-->
+    <!--<item name="scrollbarTrackHorizontal">@null</item>-->
+    <!--<item name="scrollbarTrackVertical">@null</item>-->
+
+    <!--&lt;!&ndash; Text selection handle attributes &ndash;&gt;-->
+    <!--<item name="textSelectHandleLeft">@drawable/text_select_handle_left</item>-->
+    <!--<item name="textSelectHandleRight">@drawable/text_select_handle_right</item>-->
+    <!--<item name="textSelectHandle">@drawable/text_select_handle_middle</item>-->
+    <!--<item name="textSelectHandleWindowStyle">@style/Widget.TextSelectHandle</item>-->
+    <!--<item name="textEditPasteWindowLayout">@layout/text_edit_paste_window</item>-->
+    <!--<item name="textEditNoPasteWindowLayout">@layout/text_edit_no_paste_window</item>-->
+    <!--<item name="textEditSidePasteWindowLayout">@layout/text_edit_side_paste_window</item>-->
+    <!--<item name="textEditSideNoPasteWindowLayout">@layout/text_edit_side_no_paste_window</item>-->
+    <!--<item name="textSuggestionsWindowStyle">@style/Widget.TextSuggestionsPopupWindow</item>-->
+    <!--<item name="textEditSuggestionItemLayout">@layout/text_edit_suggestion_item</item>-->
+    <!--<item name="textCursorDrawable">@null</item>-->
+
+    <!--&lt;!&ndash; Widget styles &ndash;&gt;-->
+    <!--<item name="absListViewStyle">@style/Widget.AbsListView</item>-->
+    <!--<item name="autoCompleteTextViewStyle">@style/Widget.AutoCompleteTextView</item>-->
+    <!--<item name="checkboxStyle">@style/Widget.CompoundButton.CheckBox</item>-->
+    <!--<item name="checkedTextViewStyle">@style/Widget.CheckedTextView</item>-->
+    <!--<item name="dropDownListViewStyle">@style/Widget.ListView.DropDown</item>-->
+    <!--<item name="editTextStyle">@style/Widget.EditText</item>-->
+    <!--<item name="expandableListViewStyle">@style/Widget.ExpandableListView</item>-->
+    <!--<item name="expandableListViewWhiteStyle">@style/Widget.ExpandableListView.White</item>-->
+    <!--<item name="fastScrollStyle">@style/Widget.FastScroll</item>-->
+    <!--<item name="galleryStyle">@style/Widget.Gallery</item>-->
+    <!--<item name="gestureOverlayViewStyle">@style/Widget.GestureOverlayView</item>-->
+    <!--<item name="gridViewStyle">@style/Widget.GridView</item>-->
+    <!--<item name="imageButtonStyle">@style/Widget.ImageButton</item>-->
+    <!--<item name="imageWellStyle">@style/Widget.ImageWell</item>-->
+    <!--<item name="listViewStyle">@style/Widget.ListView</item>-->
+    <!--<item name="listViewWhiteStyle">@style/Widget.ListView.White</item>-->
+    <!--<item name="popupWindowStyle">@style/Widget.PopupWindow</item>-->
+    <!--<item name="progressBarStyle">@style/Widget.ProgressBar</item>-->
+    <!--<item name="progressBarStyleHorizontal">@style/Widget.ProgressBar.Horizontal</item>-->
+    <!--<item name="progressBarStyleSmall">@style/Widget.ProgressBar.Small</item>-->
+    <!--<item name="progressBarStyleSmallTitle">@style/Widget.ProgressBar.Small.Title</item>-->
+    <!--<item name="progressBarStyleLarge">@style/Widget.ProgressBar.Large</item>-->
+    <!--<item name="progressBarStyleInverse">@style/Widget.ProgressBar.Inverse</item>-->
+    <!--<item name="progressBarStyleSmallInverse">@style/Widget.ProgressBar.Small.Inverse</item>-->
+    <!--<item name="progressBarStyleLargeInverse">@style/Widget.ProgressBar.Large.Inverse</item>-->
+    <!--<item name="seekBarStyle">@style/Widget.SeekBar</item>-->
+    <!--<item name="ratingBarStyle">@style/Widget.RatingBar</item>-->
+    <!--<item name="ratingBarStyleIndicator">@style/Widget.RatingBar.Indicator</item>-->
+    <!--<item name="ratingBarStyleSmall">@style/Widget.RatingBar.Small</item>-->
+    <!--<item name="radioButtonStyle">@style/Widget.CompoundButton.RadioButton</item>-->
+    <!--<item name="scrollViewStyle">@style/Widget.ScrollView</item>-->
+    <!--<item name="horizontalScrollViewStyle">@style/Widget.HorizontalScrollView</item>-->
+    <!--<item name="spinnerStyle">@style/Widget.Spinner</item>-->
+    <!--<item name="dropDownSpinnerStyle">@style/Widget.Spinner.DropDown</item>-->
+    <!--<item name="starStyle">@style/Widget.CompoundButton.Star</item>-->
+    <!--<item name="tabWidgetStyle">@style/Widget.TabWidget</item>-->
+    <!--<item name="textViewStyle">@style/Widget.TextView</item>-->
+    <!--<item name="errorMessageBackground">@drawable/popup_inline_error</item>-->
+    <!--<item name="errorMessageAboveBackground">@drawable/popup_inline_error_above</item>-->
+    <!--<item name="webTextViewStyle">@style/Widget.WebTextView</item>-->
+    <!--<item name="webViewStyle">@style/Widget.WebView</item>-->
+    <!--<item name="dropDownItemStyle">@style/Widget.DropDownItem</item>-->
+    <!--<item name="spinnerDropDownItemStyle">@style/Widget.DropDownItem.Spinner</item>-->
+    <!--<item name="spinnerItemStyle">@style/Widget.TextView.SpinnerItem</item>-->
+    <!--<item name="dropDownHintAppearance">@style/TextAppearance.Widget.DropDownHint</item>-->
+    <!--<item name="keyboardViewStyle">@style/Widget.KeyboardView</item>-->
+    <!--<item name="quickContactBadgeOverlay">@drawable/quickcontact_badge_overlay_dark</item>-->
+    <!--<item name="quickContactBadgeStyleWindowSmall">@style/Widget.QuickContactBadge.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleWindowMedium">@style/Widget.QuickContactBadge.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleWindowLarge">@style/Widget.QuickContactBadge.WindowLarge</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowSmall">@style/Widget.QuickContactBadgeSmall.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowMedium">@style/Widget.QuickContactBadgeSmall.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowLarge">@style/Widget.QuickContactBadgeSmall.WindowLarge</item>-->
+    <!--<item name="listPopupWindowStyle">@style/Widget.ListPopupWindow</item>-->
+    <!--<item name="popupMenuStyle">@style/Widget.PopupMenu</item>-->
+    <!--<item name="activityChooserViewStyle">@style/Widget.ActivityChooserView</item>-->
+    <!--<item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.MediaRouteButton</item>-->
+    <!--<item name="fragmentBreadCrumbsStyle">@style/Widget.FragmentBreadCrumbs</item>-->
+
+    <!--&lt;!&ndash; Preference styles &ndash;&gt;-->
+    <!--<item name="preferenceScreenStyle">@style/Preference.PreferenceScreen</item>-->
+    <!--<item name="preferenceActivityStyle">@style/PreferenceActivity</item>-->
+    <!--<item name="preferenceFragmentStyle">@style/PreferenceFragment</item>-->
+    <!--<item name="preferenceCategoryStyle">@style/Preference.Category</item>-->
+    <!--<item name="preferenceStyle">@style/Preference</item>-->
+    <!--<item name="preferenceInformationStyle">@style/Preference.Information</item>-->
+    <!--<item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference</item>-->
+    <!--<item name="switchPreferenceStyle">@style/Preference.SwitchPreference</item>-->
+    <!--<item name="seekBarPreferenceStyle">@style/Preference.SeekBarPreference</item>-->
+    <!--<item name="yesNoPreferenceStyle">@style/Preference.DialogPreference.YesNoPreference</item>-->
+    <!--<item name="dialogPreferenceStyle">@style/Preference.DialogPreference</item>-->
+    <!--<item name="seekBarDialogPreferenceStyle">@style/Preference.DialogPreference.SeekBarPreference</item>-->
+    <!--<item name="editTextPreferenceStyle">@style/Preference.DialogPreference.EditTextPreference</item>-->
+    <!--<item name="ringtonePreferenceStyle">@style/Preference.RingtonePreference</item>-->
+    <!--<item name="preferenceLayoutChild">@layout/preference_child</item>-->
+    <!--<item name="preferencePanelStyle">@style/PreferencePanel</item>-->
+    <!--<item name="preferenceHeaderPanelStyle">@style/PreferenceHeaderPanel</item>-->
+    <!--<item name="preferenceListStyle">@style/PreferenceHeaderList</item>-->
+    <!--<item name="preferenceFragmentListStyle">@style/PreferenceFragmentList</item>-->
+    <!--<item name="preferenceFragmentPaddingSide">@dimen/preference_fragment_padding_side</item>-->
+    <!--<item name="detailsElementBackground">@drawable/panel_bg_holo_dark</item>-->
+
+    <!--&lt;!&ndash; Search widget styles &ndash;&gt;-->
+    <!--<item name="searchWidgetCorpusItemBackground">@color/search_widget_corpus_item_background</item>-->
+
+    <!--&lt;!&ndash; Action bar styles &ndash;&gt;-->
+    <!--<item name="actionDropDownStyle">@style/Widget.Spinner.DropDown</item>-->
+    <!--<item name="actionButtonStyle">@style/Widget.ActionButton</item>-->
+    <!--<item name="actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>-->
+    <!--<item name="actionOverflowMenuStyle">?attr/popupMenuStyle</item>-->
+    <!--<item name="actionModeBackground">@drawable/cab_background_top_holo_dark</item>-->
+    <!--<item name="actionModeSplitBackground">@null</item>-->
+    <!--<item name="actionModeCloseDrawable">@drawable/ic_menu_close_clear_cancel</item>-->
+    <!--<item name="actionModeCutDrawable">@drawable/ic_menu_cut_holo_dark</item>-->
+    <!--<item name="actionModeCopyDrawable">@drawable/ic_menu_copy_holo_dark</item>-->
+    <!--<item name="actionModePasteDrawable">@drawable/ic_menu_paste_holo_dark</item>-->
+    <!--<item name="actionModeSelectAllDrawable">@drawable/ic_menu_selectall_holo_dark</item>-->
+    <!--<item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_dark</item>-->
+    <!--<item name="actionModeFindDrawable">@drawable/ic_menu_find_holo_dark</item>-->
+    <!--<item name="actionModeWebSearchDrawable">@drawable/ic_menu_search</item>-->
+    <!--<item name="actionBarTabStyle">@style/Widget.ActionBar.TabView</item>-->
+    <!--<item name="actionBarTabBarStyle">@style/Widget.ActionBar.TabBar</item>-->
+    <!--<item name="actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>-->
+    <!--<item name="actionModeStyle">@style/Widget.ActionMode</item>-->
+    <!--<item name="actionModeCloseButtonStyle">@style/Widget.ActionButton.CloseMode</item>-->
+    <!--<item name="actionBarStyle">@style/Widget.ActionBar</item>-->
+    <!--<item name="actionBarSplitStyle">?attr/actionBarStyle</item>-->
+    <!--<item name="actionBarSize">@dimen/action_bar_default_height</item>-->
+    <!--<item name="actionModePopupWindowStyle">?attr/popupWindowStyle</item>-->
+    <!--<item name="actionMenuTextAppearance">@style/TextAppearance.Holo.Widget.ActionBar.Menu</item>-->
+    <!--<item name="actionMenuTextColor">?attr/textColorPrimary</item>-->
+    <!--<item name="actionBarWidgetTheme">@null</item>-->
+    <!--<item name="actionBarPopupTheme">@null</item>-->
+    <!--<item name="actionBarTheme">@null</item>-->
+    <!--<item name="actionBarDivider">?attr/dividerVertical</item>-->
+    <!--<item name="actionBarItemBackground">?attr/selectableItemBackground</item>-->
+
+    <!--<item name="toolbarStyle">@style/Widget.Toolbar</item>-->
+
+    <!--<item name="dividerVertical">@drawable/divider_vertical_dark</item>-->
+    <!--<item name="dividerHorizontal">@drawable/divider_vertical_dark</item>-->
+    <!--<item name="buttonBarStyle">@style/ButtonBar</item>-->
+    <!--<item name="buttonBarButtonStyle">?attr/buttonStyle</item>-->
+    <!--<item name="buttonBarPositiveButtonStyle">?attr/buttonBarButtonStyle</item>-->
+    <!--<item name="buttonBarNegativeButtonStyle">?attr/buttonBarButtonStyle</item>-->
+    <!--<item name="buttonBarNeutralButtonStyle">?attr/buttonBarButtonStyle</item>-->
+    <!--<item name="segmentedButtonStyle">@style/SegmentedButton</item>-->
+    <!--<item name="fingerprintAuthDrawable">@drawable/ic_fingerprint</item>-->
+
+    <!--&lt;!&ndash; Floating toolbar styles &ndash;&gt;-->
+    <!--<item name="floatingToolbarCloseDrawable">@drawable/ic_ab_back_material_dark</item>-->
+    <!--<item name="floatingToolbarForegroundColor">@color/foreground_material_dark</item>-->
+    <!--<item name="floatingToolbarItemBackgroundBorderlessDrawable">@drawable/item_background_borderless_material_dark</item>-->
+    <!--<item name="floatingToolbarItemBackgroundDrawable">@drawable/item_background_material_dark</item>-->
+    <!--<item name="floatingToolbarOpenDrawable">@drawable/ic_menu_moreoverflow_material_dark</item>-->
+    <!--<item name="floatingToolbarPopupBackgroundDrawable">@drawable/floating_popup_background_dark</item>-->
+
+    <!--&lt;!&ndash; SearchView attributes &ndash;&gt;-->
+    <!--<item name="searchViewStyle">@style/Widget.Holo.SearchView</item>-->
+    <!--<item name="searchDialogTheme">@style/Theme.SearchBar</item>-->
+
+    <!--&lt;!&ndash; PreferenceFrameLayout attributes &ndash;&gt;-->
+    <!--<item name="preferenceFrameLayoutStyle">@style/Widget.PreferenceFrameLayout</item>-->
+
+    <!--&lt;!&ndash; NumberPicker style&ndash;&gt;-->
+    <!--<item name="numberPickerStyle">@style/Widget.NumberPicker</item>-->
+
+    <!--&lt;!&ndash; CalendarView style&ndash;&gt;-->
+    <!--<item name="calendarViewStyle">@style/Widget.CalendarView</item>-->
+
+    <!--&lt;!&ndash; TimePicker style &ndash;&gt;-->
+    <!--<item name="timePickerStyle">@style/Widget.TimePicker</item>-->
+
+    <!--&lt;!&ndash; TimePicker dialog theme &ndash;&gt;-->
+    <!--<item name="timePickerDialogTheme">?attr/alertDialogTheme</item>-->
+
+    <!--&lt;!&ndash; DatePicker style &ndash;&gt;-->
+    <!--<item name="datePickerStyle">@style/Widget.DatePicker</item>-->
+
+    <!--&lt;!&ndash; DatePicker dialog theme &ndash;&gt;-->
+    <!--<item name="datePickerDialogTheme">?attr/alertDialogTheme</item>-->
+
+    <!--<item name="fastScrollThumbDrawable">@drawable/scrollbar_handle_accelerated_anim2</item>-->
+    <!--<item name="fastScrollTrackDrawable">@null</item>-->
+    <!--<item name="fastScrollPreviewBackgroundRight">@drawable/menu_submenu_background</item>-->
+    <!--<item name="fastScrollPreviewBackgroundLeft">@drawable/menu_submenu_background</item>-->
+    <!--<item name="fastScrollOverlayPosition">floating</item>-->
+    <!--<item name="fastScrollTextColor">@color/primary_text_dark</item>-->
+
+    <!--&lt;!&ndash; Pointer style &ndash;&gt;-->
+    <!--<item name="pointerStyle">@style/Pointer</item>-->
+
+    <!--&lt;!&ndash; Accessibility focused drawable &ndash;&gt;-->
+    <!--<item name="accessibilityFocusedDrawable">@drawable/view_accessibility_focused</item>-->
+
+    <!--&lt;!&ndash; Lighting and shadow properties &ndash;&gt;-->
+    <!--<item name="lightY">@dimen/light_y</item>-->
+    <!--<item name="lightZ">@dimen/light_z</item>-->
+    <!--<item name="lightRadius">@dimen/light_radius</item>-->
+    <!--<item name="ambientShadowAlpha">@dimen/ambient_shadow_alpha</item>-->
+    <!--<item name="spotShadowAlpha">@dimen/spot_shadow_alpha</item>-->
+  <!--</style>-->
+  <!--<style name="Theme.Material">-->
+    <!--<item name="colorForeground">@color/foreground_material_dark</item>-->
+    <!--<item name="colorForegroundInverse">@color/foreground_material_light</item>-->
+    <!--<item name="colorBackground">@color/background_material_dark</item>-->
+    <!--<item name="colorBackgroundFloating">@color/background_floating_material_dark</item>-->
+    <!--<item name="colorBackgroundCacheHint">@color/background_cache_hint_selector_material_dark</item>-->
+    <!--<item name="disabledAlpha">@dimen/disabled_alpha_material_dark</item>-->
+    <!--<item name="backgroundDimAmount">0.6</item>-->
+
+    <!--&lt;!&ndash; Text styles &ndash;&gt;-->
+    <!--<item name="textAppearance">@style/TextAppearance.Material</item>-->
+    <!--<item name="textAppearanceInverse">@style/TextAppearance.Material.Inverse</item>-->
+
+    <!--<item name="textColorPrimary">@color/primary_text_material_dark</item>-->
+    <!--<item name="textColorPrimaryInverse">@color/primary_text_material_light</item>-->
+    <!--<item name="textColorPrimaryActivated">@color/primary_text_inverse_when_activated_material</item>-->
+    <!--<item name="textColorPrimaryDisableOnly">@color/primary_text_disable_only_material_dark</item>-->
+    <!--<item name="textColorSecondary">@color/secondary_text_material_dark</item>-->
+    <!--<item name="textColorSecondaryInverse">@color/secondary_text_material_light</item>-->
+    <!--<item name="textColorSecondaryActivated">@color/secondary_text_inverse_when_activated_material</item>-->
+    <!--<item name="textColorTertiary">@color/secondary_text_material_dark</item>-->
+    <!--<item name="textColorTertiaryInverse">@color/secondary_text_material_light</item>-->
+    <!--<item name="textColorHint">@color/hint_foreground_material_dark</item>-->
+    <!--<item name="textColorHintInverse">@color/hint_foreground_material_light</item>-->
+    <!--<item name="textColorHighlight">@color/highlighted_text_material</item>-->
+    <!--<item name="textColorHighlightInverse">@color/highlighted_text_material</item>-->
+    <!--<item name="textColorLink">?attr/colorAccent</item>-->
+    <!--<item name="textColorLinkInverse">?attr/colorAccent</item>-->
+    <!--<item name="textColorSearchUrl">@color/search_url_text_material_dark</item>-->
+    <!--<item name="textColorAlertDialogListItem">@color/primary_text_material_dark</item>-->
+
+    <!--<item name="textAppearanceLarge">@style/TextAppearance.Material.Large</item>-->
+    <!--<item name="textAppearanceLargeInverse">@style/TextAppearance.Material.Large.Inverse</item>-->
+    <!--<item name="textAppearanceMedium">@style/TextAppearance.Material.Medium</item>-->
+    <!--<item name="textAppearanceMediumInverse">@style/TextAppearance.Material.Medium.Inverse</item>-->
+    <!--<item name="textAppearanceSmall">@style/TextAppearance.Material.Small</item>-->
+    <!--<item name="textAppearanceSmallInverse">@style/TextAppearance.Material.Small.Inverse</item>-->
+    <!--<item name="textAppearanceSearchResultTitle">@style/TextAppearance.Material.SearchResult.Title</item>-->
+    <!--<item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.Material.SearchResult.Subtitle</item>-->
+
+    <!--<item name="textAppearanceButton">@style/TextAppearance.Material.Widget.Button</item>-->
+
+    <!--<item name="editTextColor">?attr/textColorPrimary</item>-->
+    <!--<item name="editTextBackground">@drawable/edit_text_material</item>-->
+
+    <!--<item name="candidatesTextStyleSpans">@string/candidates_style</item>-->
+
+    <!--<item name="textCheckMark">@drawable/indicator_check_mark_dark</item>-->
+    <!--<item name="textCheckMarkInverse">@drawable/indicator_check_mark_light</item>-->
+
+    <!--<item name="textAppearanceLargePopupMenu">@style/TextAppearance.Material.Widget.PopupMenu.Large</item>-->
+    <!--<item name="textAppearanceSmallPopupMenu">@style/TextAppearance.Material.Widget.PopupMenu.Small</item>-->
+
+    <!--&lt;!&ndash; Button styles &ndash;&gt;-->
+    <!--<item name="buttonStyle">@style/Widget.Material.Button</item>-->
+    <!--<item name="buttonStyleSmall">@style/Widget.Material.Button.Small</item>-->
+    <!--<item name="buttonStyleInset">@style/Widget.Material.Button.Inset</item>-->
+    <!--<item name="buttonStyleToggle">@style/Widget.Material.Button.Toggle</item>-->
+
+    <!--<item name="switchStyle">@style/Widget.Material.CompoundButton.Switch</item>-->
+    <!--<item name="mediaRouteButtonStyle">@style/Widget.Material.MediaRouteButton</item>-->
+
+    <!--<item name="selectableItemBackground">@drawable/item_background_material</item>-->
+    <!--<item name="selectableItemBackgroundBorderless">@drawable/item_background_borderless_material</item>-->
+    <!--<item name="borderlessButtonStyle">@style/Widget.Material.Button.Borderless</item>-->
+    <!--<item name="homeAsUpIndicator">@drawable/ic_ab_back_material</item>-->
+
+    <!--&lt;!&ndash; List attributes &ndash;&gt;-->
+    <!--<item name="listPreferredItemHeight">64dip</item>-->
+    <!--<item name="listPreferredItemHeightSmall">48dip</item>-->
+    <!--<item name="listPreferredItemHeightLarge">80dip</item>-->
+    <!--<item name="dropdownListPreferredItemHeight">?attr/listPreferredItemHeightSmall</item>-->
+    <!--<item name="textAppearanceListItem">@style/TextAppearance.Material.Subhead</item>-->
+    <!--<item name="textAppearanceListItemSmall">@style/TextAppearance.Material.Subhead</item>-->
+    <!--<item name="textAppearanceListItemSecondary">@style/TextAppearance.Material.Body1</item>-->
+    <!--<item name="listPreferredItemPaddingLeft">@dimen/list_item_padding_horizontal_material</item>-->
+    <!--<item name="listPreferredItemPaddingRight">@dimen/list_item_padding_horizontal_material</item>-->
+    <!--<item name="listPreferredItemPaddingStart">@dimen/list_item_padding_horizontal_material</item>-->
+    <!--<item name="listPreferredItemPaddingEnd">@dimen/list_item_padding_horizontal_material</item>-->
+
+    <!--&lt;!&ndash; @hide &ndash;&gt;-->
+    <!--<item name="searchResultListItemHeight">58dip</item>-->
+    <!--<item name="listDivider">@drawable/list_divider_material</item>-->
+    <!--<item name="listSeparatorTextViewStyle">@style/Widget.Material.TextView.ListSeparator</item>-->
+
+    <!--<item name="listChoiceIndicatorSingle">@drawable/btn_radio_material_anim</item>-->
+    <!--<item name="listChoiceIndicatorMultiple">@drawable/btn_check_material_anim</item>-->
+
+    <!--<item name="listChoiceBackgroundIndicator">@drawable/list_choice_background_material</item>-->
+    <!--<item name="activatedBackgroundIndicator">@drawable/activated_background_material</item>-->
+
+    <!--<item name="listDividerAlertDialog">@null</item>-->
+
+    <!--<item name="expandableListPreferredItemPaddingLeft">40dip</item>-->
+    <!--<item name="expandableListPreferredChildPaddingLeft">?attr/expandableListPreferredItemPaddingLeft</item>-->
+
+    <!--<item name="expandableListPreferredItemIndicatorLeft">3dip</item>-->
+    <!--<item name="expandableListPreferredItemIndicatorRight">0dip</item>-->
+    <!--<item name="expandableListPreferredChildIndicatorLeft">?attr/expandableListPreferredItemIndicatorLeft</item>-->
+    <!--<item name="expandableListPreferredChildIndicatorRight">?attr/expandableListPreferredItemIndicatorRight</item>-->
+
+    <!--<item name="findOnPageNextDrawable">@drawable/ic_find_next_material</item>-->
+    <!--<item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_material</item>-->
+
+    <!--&lt;!&ndash; Gallery attributes &ndash;&gt;-->
+    <!--<item name="galleryItemBackground">@drawable/gallery_item_background</item>-->
+
+    <!--&lt;!&ndash; Window attributes &ndash;&gt;-->
+    <!--<item name="windowBackground">?attr/colorBackground</item>-->
+    <!--<item name="windowClipToOutline">true</item>-->
+    <!--<item name="windowFrame">@null</item>-->
+    <!--<item name="windowNoTitle">false</item>-->
+    <!--<item name="windowFullscreen">false</item>-->
+    <!--<item name="windowOverscan">false</item>-->
+    <!--<item name="windowIsFloating">false</item>-->
+    <!--<item name="windowContentOverlay">@null</item>-->
+    <!--<item name="windowShowWallpaper">false</item>-->
+    <!--<item name="windowTitleStyle">@style/WindowTitle.Material</item>-->
+    <!--<item name="windowTitleSize">@dimen/action_bar_default_height_material</item>-->
+    <!--<item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.Material</item>-->
+    <!--<item name="windowAnimationStyle">@style/Animation.Material.Activity</item>-->
+    <!--<item name="windowSoftInputMode">stateUnspecified|adjustUnspecified</item>-->
+    <!--<item name="windowActionBar">true</item>-->
+    <!--<item name="windowActionModeOverlay">false</item>-->
+    <!--<item name="windowDrawsSystemBarBackgrounds">true</item>-->
+    <!--<item name="windowActionBarFullscreenDecorLayout">@layout/screen_toolbar</item>-->
+    <!--<item name="statusBarColor">?attr/colorPrimaryDark</item>-->
+    <!--<item name="navigationBarColor">@color/black</item>-->
+    <!--<item name="windowEnterTransition">@transition/fade</item>-->
+    <!--<item name="windowSharedElementEnterTransition">@transition/move</item>-->
+    <!--<item name="windowSharedElementExitTransition">@transition/move</item>-->
+    <!--<item name="windowContentTransitions">false</item>-->
+    <!--<item name="windowActivityTransitions">true</item>-->
+
+    <!--&lt;!&ndash; Dialog attributes &ndash;&gt;-->
+    <!--<item name="dialogTheme">@style/ThemeOverlay.Material.Dialog</item>-->
+    <!--<item name="dialogTitleIconsDecorLayout">@layout/dialog_title_icons_material</item>-->
+    <!--<item name="dialogCustomTitleDecorLayout">@layout/dialog_custom_title_material</item>-->
+    <!--<item name="dialogTitleDecorLayout">@layout/dialog_title_material</item>-->
+    <!--<item name="dialogPreferredPadding">@dimen/dialog_padding_material</item>-->
+
+    <!--&lt;!&ndash; AlertDialog attributes &ndash;&gt;-->
+    <!--<item name="alertDialogTheme">@style/ThemeOverlay.Material.Dialog.Alert</item>-->
+    <!--<item name="alertDialogStyle">@style/AlertDialog.Material</item>-->
+    <!--<item name="alertDialogCenterButtons">false</item>-->
+    <!--<item name="alertDialogIcon">@drawable/ic_dialog_alert_material</item>-->
+
+    <!--&lt;!&ndash; Presentation attributes &ndash;&gt;-->
+    <!--<item name="presentationTheme">@style/Theme.Material.Dialog.Presentation</item>-->
+
+    <!--&lt;!&ndash; Toast attributes &ndash;&gt;-->
+    <!--<item name="toastFrameBackground">@drawable/toast_frame</item>-->
+
+    <!--&lt;!&ndash; Panel attributes &ndash;&gt;-->
+    <!--<item name="panelBackground">?attr/colorBackground</item>-->
+    <!--<item name="panelFullBackground">@drawable/menu_background_fill_parent_width</item>-->
+    <!--&lt;!&ndash; These three attributes do not seems to be used by the framework. Declared public though &ndash;&gt;-->
+    <!--<item name="panelColorBackground">#000</item>-->
+    <!--<item name="panelColorForeground">?attr/textColorPrimary</item>-->
+    <!--<item name="panelTextAppearance">?attr/textAppearance</item>-->
+
+    <!--<item name="panelMenuIsCompact">true</item>-->
+    <!--<item name="panelMenuListWidth">250dip</item>-->
+    <!--<item name="panelMenuListTheme">@style/Theme.Material.CompactMenu</item>-->
+
+    <!--&lt;!&ndash; Scrollbar attributes &ndash;&gt;-->
+    <!--<item name="scrollbarFadeDuration">250</item>-->
+    <!--<item name="scrollbarDefaultDelayBeforeFade">400</item>-->
+    <!--<item name="scrollbarSize">10dp</item>-->
+    <!--<item name="scrollbarThumbHorizontal">@drawable/scrollbar_handle_material</item>-->
+    <!--<item name="scrollbarThumbVertical">@drawable/scrollbar_handle_material</item>-->
+    <!--<item name="scrollbarTrackHorizontal">@null</item>-->
+    <!--<item name="scrollbarTrackVertical">@null</item>-->
+
+    <!--&lt;!&ndash; Text selection handle attributes &ndash;&gt;-->
+    <!--<item name="textSelectHandleLeft">@drawable/text_select_handle_left_material</item>-->
+    <!--<item name="textSelectHandleRight">@drawable/text_select_handle_right_material</item>-->
+    <!--<item name="textSelectHandle">@drawable/text_select_handle_middle_material</item>-->
+    <!--<item name="textSelectHandleWindowStyle">@style/Widget.Material.TextSelectHandle</item>-->
+    <!--<item name="textSuggestionsWindowStyle">@style/Widget.Material.TextSuggestionsPopupWindow</item>-->
+    <!--<item name="textCursorDrawable">@drawable/text_cursor_material</item>-->
+
+    <!--&lt;!&ndash; Widget styles &ndash;&gt;-->
+    <!--<item name="absListViewStyle">@style/Widget.Material.AbsListView</item>-->
+    <!--<item name="autoCompleteTextViewStyle">@style/Widget.Material.AutoCompleteTextView</item>-->
+    <!--<item name="checkboxStyle">@style/Widget.Material.CompoundButton.CheckBox</item>-->
+    <!--<item name="checkedTextViewStyle">@style/Widget.Material.CheckedTextView</item>-->
+    <!--<item name="dropDownListViewStyle">@style/Widget.Material.ListView.DropDown</item>-->
+    <!--<item name="editTextStyle">@style/Widget.Material.EditText</item>-->
+    <!--<item name="expandableListViewStyle">@style/Widget.Material.ExpandableListView</item>-->
+    <!--<item name="expandableListViewWhiteStyle">@style/Widget.Material.ExpandableListView.White</item>-->
+    <!--<item name="fastScrollStyle">@style/Widget.Material.FastScroll</item>-->
+    <!--<item name="galleryStyle">@style/Widget.Material.Gallery</item>-->
+    <!--<item name="gestureOverlayViewStyle">@style/Widget.Material.GestureOverlayView</item>-->
+    <!--<item name="gridViewStyle">@style/Widget.Material.GridView</item>-->
+    <!--<item name="imageButtonStyle">@style/Widget.Material.ImageButton</item>-->
+    <!--<item name="imageWellStyle">@style/Widget.Material.ImageWell</item>-->
+    <!--<item name="listViewStyle">@style/Widget.Material.ListView</item>-->
+    <!--<item name="listViewWhiteStyle">@style/Widget.Material.ListView.White</item>-->
+    <!--<item name="popupWindowStyle">@style/Widget.Material.PopupWindow</item>-->
+    <!--<item name="progressBarStyle">@style/Widget.Material.ProgressBar</item>-->
+    <!--<item name="progressBarStyleHorizontal">@style/Widget.Material.ProgressBar.Horizontal</item>-->
+    <!--<item name="progressBarStyleSmall">@style/Widget.Material.ProgressBar.Small</item>-->
+    <!--<item name="progressBarStyleSmallTitle">@style/Widget.Material.ProgressBar.Small.Title</item>-->
+    <!--<item name="progressBarStyleLarge">@style/Widget.Material.ProgressBar.Large</item>-->
+    <!--<item name="progressBarStyleInverse">@style/Widget.Material.ProgressBar.Inverse</item>-->
+    <!--<item name="progressBarStyleSmallInverse">@style/Widget.Material.ProgressBar.Small.Inverse</item>-->
+    <!--<item name="progressBarStyleLargeInverse">@style/Widget.Material.ProgressBar.Large.Inverse</item>-->
+    <!--<item name="seekBarStyle">@style/Widget.Material.SeekBar</item>-->
+    <!--<item name="ratingBarStyle">@style/Widget.Material.RatingBar</item>-->
+    <!--<item name="ratingBarStyleIndicator">@style/Widget.Material.RatingBar.Indicator</item>-->
+    <!--<item name="ratingBarStyleSmall">@style/Widget.Material.RatingBar.Small</item>-->
+    <!--<item name="radioButtonStyle">@style/Widget.Material.CompoundButton.RadioButton</item>-->
+    <!--<item name="scrollViewStyle">@style/Widget.Material.ScrollView</item>-->
+    <!--<item name="horizontalScrollViewStyle">@style/Widget.Material.HorizontalScrollView</item>-->
+    <!--<item name="spinnerStyle">?attr/dropDownSpinnerStyle</item>-->
+    <!--<item name="dropDownSpinnerStyle">@style/Widget.Material.Spinner.DropDown</item>-->
+    <!--<item name="starStyle">@style/Widget.Material.CompoundButton.Star</item>-->
+    <!--<item name="tabWidgetStyle">@style/Widget.Material.TabWidget</item>-->
+    <!--<item name="textViewStyle">@style/Widget.Material.TextView</item>-->
+    <!--<item name="errorMessageBackground">@drawable/popup_inline_error_holo_dark</item>-->
+    <!--<item name="errorMessageAboveBackground">@drawable/popup_inline_error_above_holo_dark</item>-->
+    <!--<item name="webTextViewStyle">@style/Widget.Material.WebTextView</item>-->
+    <!--<item name="webViewStyle">@style/Widget.Material.WebView</item>-->
+    <!--<item name="dropDownItemStyle">@style/Widget.Material.DropDownItem</item>-->
+    <!--<item name="spinnerDropDownItemStyle">@style/Widget.Material.DropDownItem.Spinner</item>-->
+    <!--<item name="spinnerItemStyle">@style/Widget.Material.TextView.SpinnerItem</item>-->
+    <!--<item name="dropDownHintAppearance">@style/TextAppearance.Material.Widget.DropDownHint</item>-->
+    <!--<item name="keyboardViewStyle">@style/Widget.Material.KeyboardView</item>-->
+    <!--<item name="quickContactBadgeStyleWindowSmall">@style/Widget.Material.QuickContactBadge.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleWindowMedium">@style/Widget.Material.QuickContactBadge.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleWindowLarge">@style/Widget.Material.QuickContactBadge.WindowLarge</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowSmall">@style/Widget.Material.QuickContactBadgeSmall.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowMedium">@style/Widget.Material.QuickContactBadgeSmall.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowLarge">@style/Widget.Material.QuickContactBadgeSmall.WindowLarge</item>-->
+    <!--<item name="listPopupWindowStyle">@style/Widget.Material.ListPopupWindow</item>-->
+    <!--<item name="popupMenuStyle">@style/Widget.Material.PopupMenu</item>-->
+    <!--<item name="popupTheme">@null</item>-->
+    <!--<item name="stackViewStyle">@style/Widget.Material.StackView</item>-->
+    <!--<item name="activityChooserViewStyle">@style/Widget.Material.ActivityChooserView</item>-->
+    <!--<item name="fragmentBreadCrumbsStyle">@style/Widget.Material.FragmentBreadCrumbs</item>-->
+
+    <!--&lt;!&ndash; Preference styles &ndash;&gt;-->
+    <!--<item name="preferenceScreenStyle">@style/Preference.Material.PreferenceScreen</item>-->
+    <!--<item name="preferenceActivityStyle">@style/PreferenceActivity.Material</item>-->
+    <!--<item name="preferenceFragmentStyle">@style/PreferenceFragment.Material</item>-->
+    <!--<item name="preferenceCategoryStyle">@style/Preference.Material.Category</item>-->
+    <!--<item name="preferenceStyle">@style/Preference.Material</item>-->
+    <!--<item name="preferenceInformationStyle">@style/Preference.Material.Information</item>-->
+    <!--<item name="checkBoxPreferenceStyle">@style/Preference.Material.CheckBoxPreference</item>-->
+    <!--<item name="switchPreferenceStyle">@style/Preference.Material.SwitchPreference</item>-->
+    <!--<item name="seekBarPreferenceStyle">@style/Preference.Material.SeekBarPreference</item>-->
+    <!--<item name="yesNoPreferenceStyle">@style/Preference.Material.DialogPreference.YesNoPreference</item>-->
+    <!--<item name="dialogPreferenceStyle">@style/Preference.Material.DialogPreference</item>-->
+    <!--<item name="seekBarDialogPreferenceStyle">@style/Preference.Material.DialogPreference.SeekBarPreference</item>-->
+    <!--<item name="editTextPreferenceStyle">@style/Preference.Material.DialogPreference.EditTextPreference</item>-->
+    <!--<item name="ringtonePreferenceStyle">@style/Preference.Material.RingtonePreference</item>-->
+    <!--<item name="preferenceLayoutChild">@layout/preference_child_material</item>-->
+    <!--<item name="preferencePanelStyle">@style/PreferencePanel.Material</item>-->
+    <!--<item name="preferenceHeaderPanelStyle">@style/PreferenceHeaderPanel.Material</item>-->
+    <!--<item name="preferenceListStyle">@style/PreferenceHeaderList.Material</item>-->
+    <!--<item name="preferenceFragmentListStyle">@style/PreferenceFragmentList.Material</item>-->
+    <!--<item name="preferenceFragmentPaddingSide">@dimen/preference_fragment_padding_side_material</item>-->
+    <!--<item name="detailsElementBackground">?attr/colorBackground</item>-->
+
+    <!--&lt;!&ndash; PreferenceFrameLayout attributes &ndash;&gt;-->
+    <!--<item name="preferenceFrameLayoutStyle">@style/Widget.Material.PreferenceFrameLayout</item>-->
+
+    <!--&lt;!&ndash; Search widget styles &ndash;&gt;-->
+    <!--<item name="searchWidgetCorpusItemBackground">@color/search_widget_corpus_item_background</item>-->
+
+    <!--&lt;!&ndash; Action bar styles &ndash;&gt;-->
+    <!--<item name="actionDropDownStyle">@style/Widget.Material.Spinner.DropDown.ActionBar</item>-->
+    <!--<item name="actionButtonStyle">@style/Widget.Material.ActionButton</item>-->
+    <!--<item name="actionOverflowButtonStyle">@style/Widget.Material.ActionButton.Overflow</item>-->
+    <!--<item name="actionOverflowMenuStyle">@style/Widget.Material.PopupMenu.Overflow</item>-->
+    <!--<item name="actionModeBackground">@drawable/cab_background_top_material</item>-->
+    <!--<item name="actionModeSplitBackground">@drawable/cab_background_bottom_material</item>-->
+    <!--<item name="actionModeCloseDrawable">@drawable/ic_ab_back_material</item>-->
+    <!--<item name="actionBarTabStyle">@style/Widget.Material.ActionBar.TabView</item>-->
+    <!--<item name="actionBarTabBarStyle">@style/Widget.Material.ActionBar.TabBar</item>-->
+    <!--<item name="actionBarTabTextStyle">@style/Widget.Material.ActionBar.TabText</item>-->
+    <!--<item name="actionModeStyle">@style/Widget.Material.ActionMode</item>-->
+    <!--<item name="actionModeCloseButtonStyle">@style/Widget.Material.ActionButton.CloseMode</item>-->
+    <!--<item name="actionBarStyle">@style/Widget.Material.ActionBar.Solid</item>-->
+    <!--<item name="actionBarSize">@dimen/action_bar_default_height_material</item>-->
+    <!--<item name="actionModePopupWindowStyle">@style/Widget.Material.PopupWindow.ActionMode</item>-->
+    <!--<item name="actionMenuTextAppearance">@style/TextAppearance.Material.Widget.ActionBar.Menu</item>-->
+    <!--<item name="actionMenuTextColor">?attr/textColorPrimary</item>-->
+    <!--<item name="actionBarWidgetTheme">@null</item>-->
+    <!--<item name="actionBarPopupTheme">?attr/popupTheme</item>-->
+    <!--<item name="actionBarTheme">@style/ThemeOverlay.Material.ActionBar</item>-->
+    <!--<item name="actionBarItemBackground">@drawable/action_bar_item_background_material</item>-->
+
+    <!--<item name="actionModeCutDrawable">@drawable/ic_menu_cut_material</item>-->
+    <!--<item name="actionModeCopyDrawable">@drawable/ic_menu_copy_material</item>-->
+    <!--<item name="actionModePasteDrawable">@drawable/ic_menu_paste_material</item>-->
+    <!--<item name="actionModeSelectAllDrawable">@drawable/ic_menu_selectall_material</item>-->
+    <!--<item name="actionModeShareDrawable">@drawable/ic_menu_share_material</item>-->
+    <!--<item name="actionModeFindDrawable">@drawable/ic_menu_find_material</item>-->
+    <!--<item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_material</item>-->
+
+    <!--<item name="toolbarStyle">@style/Widget.Material.Toolbar</item>-->
+
+    <!--<item name="dividerVertical">?attr/listDivider</item>-->
+    <!--<item name="dividerHorizontal">?attr/listDivider</item>-->
+    <!--<item name="buttonBarStyle">@style/Widget.Material.ButtonBar</item>-->
+    <!--<item name="buttonBarButtonStyle">@style/Widget.Material.Button.ButtonBar.AlertDialog</item>-->
+    <!--<item name="segmentedButtonStyle">@style/Widget.Material.SegmentedButton</item>-->
+
+    <!--&lt;!&ndash; SearchView attributes &ndash;&gt;-->
+    <!--<item name="searchViewStyle">@style/Widget.Material.SearchView</item>-->
+    <!--<item name="searchDialogTheme">@style/Theme.Material.SearchBar</item>-->
+
+    <!--&lt;!&ndash; NumberPicker style&ndash;&gt;-->
+    <!--<item name="numberPickerStyle">@style/Widget.Material.NumberPicker</item>-->
+
+    <!--&lt;!&ndash; CalendarView style&ndash;&gt;-->
+    <!--<item name="calendarViewStyle">@style/Widget.Material.CalendarView</item>-->
+
+    <!--&lt;!&ndash; TimePicker style &ndash;&gt;-->
+    <!--<item name="timePickerStyle">@style/Widget.Material.TimePicker</item>-->
+
+    <!--&lt;!&ndash; TimePicker dialog theme &ndash;&gt;-->
+    <!--<item name="timePickerDialogTheme">?attr/dialogTheme</item>-->
+
+    <!--&lt;!&ndash; DatePicker style &ndash;&gt;-->
+    <!--<item name="datePickerStyle">@style/Widget.Material.DatePicker</item>-->
+
+    <!--&lt;!&ndash; DatePicker dialog theme &ndash;&gt;-->
+    <!--<item name="datePickerDialogTheme">?attr/dialogTheme</item>-->
+
+    <!--&lt;!&ndash; TODO: This belongs in a FastScroll style &ndash;&gt;-->
+    <!--<item name="fastScrollThumbDrawable">@drawable/fastscroll_thumb_material</item>-->
+    <!--<item name="fastScrollPreviewBackgroundLeft">@drawable/fastscroll_label_left_material</item>-->
+    <!--<item name="fastScrollPreviewBackgroundRight">@drawable/fastscroll_label_right_material</item>-->
+    <!--<item name="fastScrollTrackDrawable">@drawable/fastscroll_track_material</item>-->
+    <!--<item name="fastScrollOverlayPosition">aboveThumb</item>-->
+
+    <!--&lt;!&ndash; Color palette &ndash;&gt;-->
+    <!--<item name="colorPrimaryDark">@color/primary_dark_material_dark</item>-->
+    <!--<item name="colorPrimary">@color/primary_material_dark</item>-->
+    <!--<item name="colorAccent">@color/accent_material_dark</item>-->
+    <!--<item name="colorEdgeEffect">?attr/colorPrimary</item>-->
+
+    <!--<item name="colorControlNormal">?attr/textColorSecondary</item>-->
+    <!--<item name="colorControlActivated">?attr/colorAccent</item>-->
+
+    <!--<item name="colorControlHighlight">@color/ripple_material_dark</item>-->
+    <!--<item name="colorButtonNormal">@color/btn_default_material_dark</item>-->
+    <!--<item name="colorSwitchThumbNormal">@color/switch_thumb_material_dark</item>-->
+  <!--</style>-->
+  <!--<style name="Theme.Material.BaseDialog">-->
+    <!--<item name="colorBackground">?attr/colorBackgroundFloating</item>-->
+
+    <!--<item name="windowFrame">@null</item>-->
+    <!--<item name="windowTitleStyle">@style/DialogWindowTitle.Material</item>-->
+    <!--<item name="windowTitleBackgroundStyle">@style/DialogWindowTitleBackground.Material</item>-->
+    <!--<item name="windowBackground">@drawable/dialog_background_material</item>-->
+    <!--<item name="windowElevation">@dimen/floating_window_z</item>-->
+    <!--<item name="windowIsFloating">true</item>-->
+    <!--<item name="windowContentOverlay">@null</item>-->
+    <!--<item name="windowAnimationStyle">@style/Animation.Material.Dialog</item>-->
+    <!--<item name="windowSoftInputMode">stateUnspecified|adjustPan</item>-->
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="windowActionModeOverlay">true</item>-->
+    <!--<item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>-->
+
+    <!--<item name="colorBackgroundCacheHint">@null</item>-->
+
+    <!--<item name="listPreferredItemPaddingLeft">24dip</item>-->
+    <!--<item name="listPreferredItemPaddingRight">24dip</item>-->
+    <!--<item name="listPreferredItemPaddingStart">24dip</item>-->
+    <!--<item name="listPreferredItemPaddingEnd">24dip</item>-->
+
+    <!--<item name="listDivider">@null</item>-->
+
+    <!--<item name="preferencePanelStyle">@style/PreferencePanel.Dialog</item>-->
+  <!--</style>-->
+  <!--<style name="Theme.Material.Dialog" parent="Theme.Material.BaseDialog"/>-->
+  <!--<style name="Theme.DeviceDefault" parent="Theme.Material" >-->
+    <!--&lt;!&ndash; Text styles &ndash;&gt;-->
+    <!--<item name="textAppearance">@style/TextAppearance.DeviceDefault</item>-->
+    <!--<item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>-->
+
+    <!--<item name="textAppearanceLarge">@style/TextAppearance.DeviceDefault.Large</item>-->
+    <!--<item name="textAppearanceMedium">@style/TextAppearance.DeviceDefault.Medium</item>-->
+    <!--<item name="textAppearanceSmall">@style/TextAppearance.DeviceDefault.Small</item>-->
+    <!--<item name="textAppearanceLargeInverse">@style/TextAppearance.DeviceDefault.Large.Inverse</item>-->
+    <!--<item name="textAppearanceMediumInverse">@style/TextAppearance.DeviceDefault.Medium.Inverse</item>-->
+    <!--<item name="textAppearanceSmallInverse">@style/TextAppearance.DeviceDefault.Small.Inverse</item>-->
+    <!--<item name="textAppearanceSearchResultTitle">@style/TextAppearance.DeviceDefault.SearchResult.Title</item>-->
+    <!--<item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.DeviceDefault.SearchResult.Subtitle</item>-->
+
+    <!--<item name="textAppearanceButton">@style/TextAppearance.DeviceDefault.Widget.Button</item>-->
+
+    <!--<item name="textAppearanceLargePopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Large</item>-->
+    <!--<item name="textAppearanceSmallPopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Small</item>-->
+
+    <!--&lt;!&ndash; Button styles &ndash;&gt;-->
+    <!--<item name="buttonStyle">@style/Widget.DeviceDefault.Button</item>-->
+
+    <!--<item name="buttonStyleSmall">@style/Widget.DeviceDefault.Button.Small</item>-->
+    <!--<item name="buttonStyleInset">@style/Widget.DeviceDefault.Button.Inset</item>-->
+
+    <!--<item name="buttonStyleToggle">@style/Widget.DeviceDefault.Button.Toggle</item>-->
+    <!--<item name="switchStyle">@style/Widget.DeviceDefault.CompoundButton.Switch</item>-->
+
+    <!--<item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless</item>-->
+
+    <!--<item name="listSeparatorTextViewStyle">@style/Widget.DeviceDefault.TextView.ListSeparator</item>-->
+
+    <!--&lt;!&ndash; Window attributes &ndash;&gt;-->
+    <!--<item name="windowTitleStyle">@style/WindowTitle.DeviceDefault</item>-->
+    <!--<item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.DeviceDefault</item>-->
+    <!--<item name="windowAnimationStyle">@style/Animation.DeviceDefault.Activity</item>-->
+
+    <!--&lt;!&ndash; Dialog attributes &ndash;&gt;-->
+    <!--<item name="dialogTheme">@style/Theme.DeviceDefault.Dialog</item>-->
+
+    <!--&lt;!&ndash; AlertDialog attributes &ndash;&gt;-->
+    <!--<item name="alertDialogTheme">@style/Theme.DeviceDefault.Dialog.Alert</item>-->
+    <!--<item name="alertDialogStyle">@style/AlertDialog.DeviceDefault</item>-->
+
+    <!--&lt;!&ndash; Presentation attributes &ndash;&gt;-->
+    <!--<item name="presentationTheme">@style/Theme.DeviceDefault.Dialog.Presentation</item>-->
+
+    <!--&lt;!&ndash; Text selection handle attributes &ndash;&gt;-->
+    <!--<item name="textSelectHandleWindowStyle">@style/Widget.DeviceDefault.TextSelectHandle</item>-->
+    <!--<item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.TextSuggestionsPopupWindow</item>-->
+
+    <!--&lt;!&ndash; Widget styles &ndash;&gt;-->
+    <!--<item name="absListViewStyle">@style/Widget.DeviceDefault.AbsListView</item>-->
+    <!--<item name="autoCompleteTextViewStyle">@style/Widget.DeviceDefault.AutoCompleteTextView</item>-->
+    <!--<item name="checkboxStyle">@style/Widget.DeviceDefault.CompoundButton.CheckBox</item>-->
+    <!--<item name="checkedTextViewStyle">@style/Widget.DeviceDefault.CheckedTextView</item>-->
+    <!--<item name="dropDownListViewStyle">@style/Widget.DeviceDefault.ListView.DropDown</item>-->
+    <!--<item name="editTextStyle">@style/Widget.DeviceDefault.EditText</item>-->
+    <!--<item name="expandableListViewStyle">@style/Widget.DeviceDefault.ExpandableListView</item>-->
+    <!--<item name="expandableListViewWhiteStyle">@style/Widget.DeviceDefault.ExpandableListView.White</item>-->
+    <!--<item name="galleryStyle">@style/Widget.DeviceDefault.Gallery</item>-->
+    <!--<item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.GestureOverlayView</item>-->
+    <!--<item name="gridViewStyle">@style/Widget.DeviceDefault.GridView</item>-->
+    <!--<item name="imageButtonStyle">@style/Widget.DeviceDefault.ImageButton</item>-->
+    <!--<item name="imageWellStyle">@style/Widget.DeviceDefault.ImageWell</item>-->
+    <!--<item name="listViewStyle">@style/Widget.DeviceDefault.ListView</item>-->
+    <!--<item name="listViewWhiteStyle">@style/Widget.DeviceDefault.ListView.White</item>-->
+    <!--<item name="popupWindowStyle">@style/Widget.DeviceDefault.PopupWindow</item>-->
+    <!--<item name="progressBarStyle">@style/Widget.DeviceDefault.ProgressBar</item>-->
+    <!--<item name="progressBarStyleHorizontal">@style/Widget.DeviceDefault.ProgressBar.Horizontal</item>-->
+    <!--<item name="progressBarStyleSmall">@style/Widget.DeviceDefault.ProgressBar.Small</item>-->
+    <!--<item name="progressBarStyleSmallTitle">@style/Widget.DeviceDefault.ProgressBar.Small.Title</item>-->
+    <!--<item name="progressBarStyleLarge">@style/Widget.DeviceDefault.ProgressBar.Large</item>-->
+    <!--<item name="progressBarStyleInverse">@style/Widget.DeviceDefault.ProgressBar.Inverse</item>-->
+    <!--<item name="progressBarStyleSmallInverse">@style/Widget.DeviceDefault.ProgressBar.Small.Inverse</item>-->
+    <!--<item name="progressBarStyleLargeInverse">@style/Widget.DeviceDefault.ProgressBar.Large.Inverse</item>-->
+    <!--<item name="seekBarStyle">@style/Widget.DeviceDefault.SeekBar</item>-->
+    <!--<item name="ratingBarStyle">@style/Widget.DeviceDefault.RatingBar</item>-->
+    <!--<item name="ratingBarStyleIndicator">@style/Widget.DeviceDefault.RatingBar.Indicator</item>-->
+    <!--<item name="ratingBarStyleSmall">@style/Widget.DeviceDefault.RatingBar.Small</item>-->
+    <!--<item name="radioButtonStyle">@style/Widget.DeviceDefault.CompoundButton.RadioButton</item>-->
+    <!--<item name="scrollViewStyle">@style/Widget.DeviceDefault.ScrollView</item>-->
+    <!--<item name="horizontalScrollViewStyle">@style/Widget.DeviceDefault.HorizontalScrollView</item>-->
+    <!--<item name="dropDownSpinnerStyle">@style/Widget.DeviceDefault.Spinner.DropDown</item>-->
+    <!--<item name="starStyle">@style/Widget.DeviceDefault.CompoundButton.Star</item>-->
+    <!--<item name="tabWidgetStyle">@style/Widget.DeviceDefault.TabWidget</item>-->
+    <!--<item name="textViewStyle">@style/Widget.DeviceDefault.TextView</item>-->
+    <!--<item name="webTextViewStyle">@style/Widget.DeviceDefault.WebTextView</item>-->
+    <!--<item name="webViewStyle">@style/Widget.DeviceDefault.WebView</item>-->
+    <!--<item name="dropDownItemStyle">@style/Widget.DeviceDefault.DropDownItem</item>-->
+    <!--<item name="spinnerDropDownItemStyle">@style/Widget.DeviceDefault.DropDownItem.Spinner</item>-->
+    <!--<item name="spinnerItemStyle">@style/Widget.DeviceDefault.TextView.SpinnerItem</item>-->
+    <!--<item name="dropDownHintAppearance">@style/TextAppearance.DeviceDefault.Widget.DropDownHint</item>-->
+    <!--<item name="keyboardViewStyle">@style/Widget.DeviceDefault.KeyboardView</item>-->
+    <!--<item name="quickContactBadgeStyleWindowSmall">@style/Widget.DeviceDefault.QuickContactBadge.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleWindowMedium">@style/Widget.DeviceDefault.QuickContactBadge.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleWindowLarge">@style/Widget.DeviceDefault.QuickContactBadge.WindowLarge</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowSmall">@style/Widget.DeviceDefault.QuickContactBadgeSmall.WindowSmall</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowMedium">@style/Widget.DeviceDefault.QuickContactBadgeSmall.WindowMedium</item>-->
+    <!--<item name="quickContactBadgeStyleSmallWindowLarge">@style/Widget.DeviceDefault.QuickContactBadgeSmall.WindowLarge</item>-->
+    <!--<item name="listPopupWindowStyle">@style/Widget.DeviceDefault.ListPopupWindow</item>-->
+    <!--<item name="popupMenuStyle">@style/Widget.DeviceDefault.PopupMenu</item>-->
+    <!--<item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>-->
+
+    <!--&lt;!&ndash; Preference styles &ndash;&gt;-->
+    <!--<item name="preferenceScreenStyle">@style/Preference.DeviceDefault.PreferenceScreen</item>-->
+    <!--<item name="preferenceCategoryStyle">@style/Preference.DeviceDefault.Category</item>-->
+    <!--<item name="preferenceStyle">@style/Preference.DeviceDefault</item>-->
+    <!--<item name="preferenceInformationStyle">@style/Preference.DeviceDefault.Information</item>-->
+    <!--<item name="checkBoxPreferenceStyle">@style/Preference.DeviceDefault.CheckBoxPreference</item>-->
+    <!--<item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>-->
+    <!--<item name="seekBarPreferenceStyle">@style/Preference.DeviceDefault.SeekBarPreference</item>-->
+    <!--<item name="yesNoPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.YesNoPreference</item>-->
+    <!--<item name="dialogPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference</item>-->
+    <!--<item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.EditTextPreference</item>-->
+    <!--<item name="ringtonePreferenceStyle">@style/Preference.DeviceDefault.RingtonePreference</item>-->
+
+    <!--&lt;!&ndash; Action bar styles &ndash;&gt;-->
+    <!--<item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>-->
+    <!--<item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>-->
+    <!--<item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>-->
+    <!--<item name="actionBarTabStyle">@style/Widget.DeviceDefault.ActionBar.TabView</item>-->
+    <!--<item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.ActionBar.TabBar</item>-->
+    <!--<item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.ActionBar.TabText</item>-->
+    <!--<item name="actionModeStyle">@style/Widget.DeviceDefault.ActionMode</item>-->
+    <!--<item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>-->
+    <!--<item name="actionBarStyle">@style/Widget.DeviceDefault.ActionBar.Solid</item>-->
+    <!--<item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>-->
+
+    <!--<item name="buttonBarStyle">@style/DeviceDefault.ButtonBar</item>-->
+    <!--<item name="segmentedButtonStyle">@style/DeviceDefault.SegmentedButton</item>-->
+
+    <!--<item name="searchDialogTheme">@style/Theme.DeviceDefault.SearchBar</item>-->
+
+    <!--&lt;!&ndash; PreferenceFrameLayout attributes &ndash;&gt;-->
+    <!--<item name="preferenceFrameLayoutStyle">@style/Widget.DeviceDefault.PreferenceFrameLayout</item>-->
+
+    <!--&lt;!&ndash; NumberPicker style&ndash;&gt;-->
+    <!--<item name="numberPickerStyle">@style/Widget.DeviceDefault.NumberPicker</item>-->
+
+    <!--&lt;!&ndash; CalendarView style&ndash;&gt;-->
+    <!--<item name="calendarViewStyle">@style/Widget.DeviceDefault.CalendarView</item>-->
+
+    <!--&lt;!&ndash; TimePicker style &ndash;&gt;-->
+    <!--<item name="timePickerStyle">@style/Widget.DeviceDefault.TimePicker</item>-->
+
+    <!--&lt;!&ndash; DatePicker style &ndash;&gt;-->
+    <!--<item name="datePickerStyle">@style/Widget.DeviceDefault.DatePicker</item>-->
+
+    <!--<item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.MediaRouteButton</item>-->
+
+  <!--</style>-->
+  <style name="ggg_theme_dialog" parent="@android:style/Theme.Material.Dialog" >
+    <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
+    <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
+
+    <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar.AlertDialog</item>
+    <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless.Small</item>
+
+    <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
+    <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
+  </style>
+
+</resources>

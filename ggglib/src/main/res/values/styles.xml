@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="ggg_theme_dialog" parent="@android:style/Theme.DeviceDefault.Dialog" >
+    <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
+    <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
+
+    <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar.AlertDialog</item>
+    <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless.Small</item>
+
+    <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
+    <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
+  </style>
+
+</resources>

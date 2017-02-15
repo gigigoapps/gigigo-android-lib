@@ -39,7 +39,7 @@ public class PermissionsUIViews {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static void showRationaleView(final RationaleResponse rationaleResponse, Context context,
       int rationaleTitleStringId, int rationaleMessageStringId) {
-    new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+    new AlertDialog.Builder(new ContextThemeWrapper(context,R.style.ggg_theme_dialog))
         .setTitle(rationaleTitleStringId)
         .setMessage(rationaleMessageStringId)
         .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -85,7 +85,7 @@ public class PermissionsUIViews {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static void showRetryPermissionView(final Context context, int rationaleTitleStringId,
       int rationaleMessageStringId) {
-    new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+    new AlertDialog.Builder(new ContextThemeWrapper(context,R.style.ggg_theme_dialog))
         .setTitle(rationaleTitleStringId)
         .setMessage(rationaleMessageStringId)
         .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -116,7 +116,7 @@ public class PermissionsUIViews {
   public static void showSettingsView(final Context context, int rationaleTitleStringId,
       int settingsStringId, int deniedStringId) {
     if (deniedStringId != -1) {
-      new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+      new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.ggg_theme_dialog))
           .setTitle(rationaleTitleStringId)
           .setMessage(deniedStringId)
           .setPositiveButton(settingsStringId, new DialogInterface.OnClickListener() {
