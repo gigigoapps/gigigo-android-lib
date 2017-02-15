@@ -168,7 +168,6 @@ public abstract class AbstractPermissionListener implements PermissionListener {
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleMessage());
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleTitle());
       // megaHash = megaHash + hashCodeObject(this.getNumRetry());
-
       megaHash =
           megaHash + hashCodeObject(this.contextProvider.getApplicationContext().getPackageName());
     } catch (Exception e) {

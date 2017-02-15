@@ -22,11 +22,13 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
+import android.view.ContextThemeWrapper;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.gigigo.ggglib.R;
@@ -37,7 +39,8 @@ public class PermissionsUIViews {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static void showRationaleView(final RationaleResponse rationaleResponse, Context context,
       int rationaleTitleStringId, int rationaleMessageStringId) {
-    new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
+    new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+        .setTitle(rationaleTitleStringId)
         .setMessage(rationaleMessageStringId)
         .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
           @Override public void onClick(DialogInterface dialog, int which) {
@@ -82,7 +85,8 @@ public class PermissionsUIViews {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static void showRetryPermissionView(final Context context, int rationaleTitleStringId,
       int rationaleMessageStringId) {
-    new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
+    new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+        .setTitle(rationaleTitleStringId)
         .setMessage(rationaleMessageStringId)
         .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
           @Override public void onClick(DialogInterface dialog, int which) {
@@ -112,7 +116,8 @@ public class PermissionsUIViews {
   public static void showSettingsView(final Context context, int rationaleTitleStringId,
       int settingsStringId, int deniedStringId) {
     if (deniedStringId != -1) {
-      new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
+      new AlertDialog.Builder(new ContextThemeWrapper(context,android.R.style.Theme_DeviceDefault_Dialog))
+          .setTitle(rationaleTitleStringId)
           .setMessage(deniedStringId)
           .setPositiveButton(settingsStringId, new DialogInterface.OnClickListener() {
             @Override public void onClick(DialogInterface dialog, int which) {
