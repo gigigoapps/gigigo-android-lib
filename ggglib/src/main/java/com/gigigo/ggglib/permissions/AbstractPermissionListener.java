@@ -87,7 +87,6 @@ public abstract class AbstractPermissionListener implements PermissionListener {
     if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
       if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
     }
-
   }
 
   private RationaleResponse createRationaleResponseInstance(final PermissionToken token) {
@@ -169,6 +168,9 @@ public abstract class AbstractPermissionListener implements PermissionListener {
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleMessage());
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleTitle());
       // megaHash = megaHash + hashCodeObject(this.getNumRetry());
+
+      megaHash =
+          megaHash + hashCodeObject(this.contextProvider.getApplicationContext().getPackageName());
     } catch (Exception e) {
       Log.i("ERROR ", e.getMessage());
     } catch (Throwable throwable) {
