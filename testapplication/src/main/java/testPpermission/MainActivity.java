@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
       new UserPermissionRequestResponseListener() {
         @Override public void onPermissionAllowed(boolean permissionAllowed) {
           if (permissionAllowed) {
-            Toast.makeText(MainActivity.this, "MENSAJE DE TEST Permiso recien concedido", Toast.LENGTH_LONG).show();
+           // Toast.makeText(MainActivity.this, "MENSAJE DE TEST Permiso recien concedido", Toast.LENGTH_LONG).show();
           } else {
-            Toast.makeText(MainActivity.this, "MENSAJE DE TEST Permiso NO concedido", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(MainActivity.this, "MENSAJE DE TEST Permiso NO concedido", Toast.LENGTH_LONG).show();
           }
         }
       };
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean isGranted = permissionChecker.isGranted(accessFineLocationPermissionImp);
     if (isGranted) {
-      Toast.makeText(this, "Permiso concedido, con anterioridad", Toast.LENGTH_LONG).show();
+    //  Toast.makeText(this, "Permiso concedido, con anterioridad", Toast.LENGTH_LONG).show();
     } else {
       permissionChecker.askForPermission(accessFineLocationPermissionImp,
           userPermissionResponseListener, this);

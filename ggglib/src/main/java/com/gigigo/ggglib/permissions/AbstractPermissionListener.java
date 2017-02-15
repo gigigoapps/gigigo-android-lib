@@ -21,7 +21,6 @@ package com.gigigo.ggglib.permissions;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 import com.gigigo.ggglib.ContextProvider;
 import com.karumi.dexterox.PermissionToken;
 import com.karumi.dexterox.listener.PermissionDeniedResponse;
@@ -53,30 +52,42 @@ public abstract class AbstractPermissionListener implements PermissionListener {
 
   @Override public void onPermissionDenied(PermissionDeniedResponse response) {
     //
+    if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
+      if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+    }
 
     if (userPermissionRequestResponseListener != null) {
       userPermissionRequestResponseListener.onPermissionAllowed(false);
     }
   }
 
+  RationaleResponse rationaleResponse;
+
   @Override public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest,
       PermissionToken token) {
 
-    RationaleResponse rationaleResponse = createRationaleResponseInstance(token);//
+    rationaleResponse = createRationaleResponseInstance(token);//
 
     Context context = contextProvider.getCurrentActivity();
-    if (showSettingsDialog()) {
+    if (showRationaleDialog()) {
       PermissionsUIViews.showRationaleView(rationaleResponse, context,
           getPermissionRationaleTitle(), getPermissionRationaleMessage());
     }
 
     if (getNumRetry() > 0 && getNumRetry() == readNumRetryDone()) {
-      PermissionsUIViews.showSettingsView(context,getPermissionRationaleTitle(), getPermissionSettingsDeniedFeedback(),
-          getPermissionDeniedFeedback());
-        //  only show this one time, the next writeNewretry
+      PermissionsUIViews.showSettingsView(context, getPermissionRationaleTitle(),
+          getPermissionSettingsDeniedFeedback(), getPermissionDeniedFeedback());
     }
 
+    //no retry close permission request
+    if (getNumRetry() == 0) rationaleResponse.cancelPermissionRequest();   //kill dexterActivity
+
     if (getNumRetry() > 0) writeNewRetry();
+
+    if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
+      if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+    }
+
   }
 
   private RationaleResponse createRationaleResponseInstance(final PermissionToken token) {
@@ -97,10 +108,11 @@ public abstract class AbstractPermissionListener implements PermissionListener {
 
   public abstract int getPermissionRationaleTitle();
 
-  public abstract int getNumRetry() ;
+  public abstract int getNumRetry();
 
-  public abstract  int getPermissionSettingsDeniedFeedback();
-  /*NEW retrys*/
+  public abstract int getPermissionSettingsDeniedFeedback();
+
+  /*NEW retrys save in preferences*/
   public String calculateHashCodeKey() {
     String hashcode = this.hashCode() + "";
     return hashcode;
@@ -136,10 +148,9 @@ public abstract class AbstractPermissionListener implements PermissionListener {
     return 0;
   }
 
-  private boolean showSettingsDialog() {
+  private boolean showRationaleDialog() {
 
     if (getNumRetry() == -1) return true; //infinite retries
-
     if (getNumRetry() == 0) return false; //no one retries
     if (getNumRetry() > readNumRetryDone()) { //check retries
       return true;
@@ -147,8 +158,6 @@ public abstract class AbstractPermissionListener implements PermissionListener {
       return false;
     }
   }
-
-
 
   /****
    * calculate hashcode from permission for create key in preferences and counts retries
@@ -159,6 +168,7 @@ public abstract class AbstractPermissionListener implements PermissionListener {
       megaHash = hashCodeObject(this.getPermissionDeniedFeedback());
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleMessage());
       megaHash = megaHash + hashCodeObject(this.getPermissionRationaleTitle());
+      // megaHash = megaHash + hashCodeObject(this.getNumRetry());
     } catch (Exception e) {
       Log.i("ERROR ", e.getMessage());
     } catch (Throwable throwable) {

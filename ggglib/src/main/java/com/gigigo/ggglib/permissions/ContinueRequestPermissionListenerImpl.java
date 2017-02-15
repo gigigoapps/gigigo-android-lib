@@ -40,7 +40,7 @@ public class ContinueRequestPermissionListenerImpl extends AbstractPermissionLis
   }
 
   @Override public int getNumRetry() {
-    return 0;
+    return -1;
   }
 
   @Override public int getPermissionSettingsDeniedFeedback() {

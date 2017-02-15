@@ -111,23 +111,25 @@ public class PermissionsUIViews {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public static void showSettingsView(final Context context, int rationaleTitleStringId,
       int settingsStringId, int deniedStringId) {
-    new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
-        .setMessage(deniedStringId)
-        .setPositiveButton(settingsStringId, new DialogInterface.OnClickListener() {
-          @Override public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-            Intent myAppSettings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                Uri.parse("package:" + context.getPackageName()));
-            myAppSettings.addCategory(Intent.CATEGORY_DEFAULT);
-            myAppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(myAppSettings);
-          }
-        })
-        .setOnDismissListener(new DialogInterface.OnDismissListener() {
-          @Override public void onDismiss(DialogInterface dialog) {
-            dialog.dismiss();
-          }
-        })
-        .show();
+    if (deniedStringId != -1) {
+      new AlertDialog.Builder(context).setTitle(rationaleTitleStringId)
+          .setMessage(deniedStringId)
+          .setPositiveButton(settingsStringId, new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+              dialog.dismiss();
+              Intent myAppSettings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                  Uri.parse("package:" + context.getPackageName()));
+              myAppSettings.addCategory(Intent.CATEGORY_DEFAULT);
+              myAppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+              context.startActivity(myAppSettings);
+            }
+          })
+          .setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override public void onDismiss(DialogInterface dialog) {
+              dialog.dismiss();
+            }
+          })
+          .show();
+    }
   }
 }

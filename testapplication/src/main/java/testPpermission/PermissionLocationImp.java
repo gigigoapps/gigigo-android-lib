@@ -21,9 +21,7 @@ public class PermissionLocationImp implements Permission {
 
   @Override
   public int getPermissionDeniedFeedback() {
-
-   // return -1;//asv if you dont want show the message all times the app is started
-
+  // return -1;//asv if you dont want show the message all times the app is started
     return R.string.ox_permission_denied_geolocation;
   }
 
@@ -38,6 +36,6 @@ public class PermissionLocationImp implements Permission {
   }
 
   @Override public int getNumRetry() {
-    return 1;
+    return 0;
   }
 }
