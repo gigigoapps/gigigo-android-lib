@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import com.gigigo.ggglib.ContextProvider;
+import com.karumi.dexterox.Dexter;
 import com.karumi.dexterox.PermissionToken;
 import com.karumi.dexterox.listener.PermissionDeniedResponse;
 import com.karumi.dexterox.listener.PermissionGrantedResponse;
@@ -52,9 +53,9 @@ public abstract class AbstractPermissionListener implements PermissionListener {
 
   @Override public void onPermissionDenied(PermissionDeniedResponse response) {
     //
-    if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
-      if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
-    }
+    //if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
+    //  if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+    //}
 
     if (userPermissionRequestResponseListener != null) {
       userPermissionRequestResponseListener.onPermissionAllowed(false);
@@ -73,19 +74,21 @@ public abstract class AbstractPermissionListener implements PermissionListener {
       PermissionsUIViews.showRationaleView(rationaleResponse, context,
           getPermissionRationaleTitle(), getPermissionRationaleMessage());
     }
-
     if (getNumRetry() > 0 && getNumRetry() == readNumRetryDone()) {
       PermissionsUIViews.showSettingsView(context, getPermissionRationaleTitle(),
           getPermissionSettingsDeniedFeedback(), getPermissionDeniedFeedback());
     }
 
     //no retry close permission request
-    if (getNumRetry() == 0) rationaleResponse.cancelPermissionRequest();   //kill dexterActivity
+    if (getNumRetry() == 0) {
+      Dexter.closeActivity();// rationaleResponse.cancelPermissionRequest();   //kill dexterActivity
+    }
 
     if (getNumRetry() > 0) writeNewRetry();
 
     if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
       if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+      Dexter.closeActivity();
     }
   }
 

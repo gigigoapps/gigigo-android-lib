@@ -36,6 +36,6 @@ public class PermissionLocationImp implements Permission {
   }
 
   @Override public int getNumRetry() {
-    return 0;
+    return 2;
   }
 }
