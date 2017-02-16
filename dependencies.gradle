@@ -21,7 +21,7 @@ allprojects {
     dependencies = [
                     retrofit                   : 'com.squareup.retrofit2:retrofit:2.0.2',
                     gsonConverter              : 'com.squareup.retrofit2:converter-gson:2.0.2',
-                    permissionsModule          : project(':permissionModule')
+                    permissionsModule          : project(':permissionModule'){transitive=true}
                  //   permissionsModule          : 'com.github.GigigoGreenLabs:permissionsModule:1.1'//master branch
                    // permissionsModule          : 'com.github.GigigoGreenLabs:permissionsModule:2.1' //new reducebranch
     ]
