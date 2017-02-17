@@ -55,6 +55,7 @@ public abstract class AbstractPermissionListener implements PermissionListener {
     //
     //if (getNumRetry() > 0 && readNumRetryDone() >= getNumRetry()) {
     //  if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+    //  Dexter.closeActivity();
     //}
 
     if (userPermissionRequestResponseListener != null) {
@@ -81,7 +82,8 @@ public abstract class AbstractPermissionListener implements PermissionListener {
 
     //no retry close permission request
     if (getNumRetry() == 0) {
-      Dexter.closeActivity();// rationaleResponse.cancelPermissionRequest();   //kill dexterActivity
+      if (rationaleResponse != null) rationaleResponse.cancelPermissionRequest();
+      Dexter.closeActivity();   //kill dexterActivity
     }
 
     if (getNumRetry() > 0) writeNewRetry();
