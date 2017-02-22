@@ -50,6 +50,8 @@ public class AndroidPermissionCheckerImpl implements PermissionChecker {
         permission.getAndroidPermissionStringType());
   }
 
+
+
   @Override public void continuePendingPermissionsRequestsIfPossible() {
     Dexter.continuePendingRequestIfPossible(
         new ContinueRequestPermissionListenerImpl(contextProvider));
