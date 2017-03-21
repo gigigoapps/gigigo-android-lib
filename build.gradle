@@ -42,9 +42,6 @@ allprojects {
     androidBuildToolsVersion = '23.0.1'
     androidMinSdkVersion = 10
     androidTargetSdkVersion = 23
-    androidApplicationId = 'com.gigigo.ggglib.utilssuite'
-    androidVersionCode = 1
-    androidVersionName = '1.0'
   }
 
   repositories {

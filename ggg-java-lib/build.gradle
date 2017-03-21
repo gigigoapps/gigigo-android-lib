@@ -23,8 +23,8 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
-  testCompile parent.ext.testDependencies.junit
-  testCompile parent.ext.testDependencies.mockito
+  testCompile parent.ext.testLibraries.junit
+  testCompile parent.ext.testLibraries.mockito
 }
 
 test {
@@ -49,5 +49,5 @@ artifacts {
 }
 
 checkstyle {
-    configFile = rootProject.file('checkstyle.xml')
-    }
+  configFile = rootProject.file('checkstyle.xml')
+}

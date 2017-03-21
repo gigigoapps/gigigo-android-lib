@@ -20,7 +20,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-
   compileSdkVersion parent.ext.androidCompileSdkVersion
   buildToolsVersion parent.ext.androidBuildToolsVersion
 
@@ -46,9 +45,9 @@ android {
     }
   }
 
-    lintOptions {
-      abortOnError false
-    }
+  lintOptions {
+    abortOnError false
+  }
 
   testOptions {
     unitTests.returnDefaultValues = true
@@ -56,19 +55,16 @@ android {
 }
 
 dependencies {
+  compile parent.ext.libraries.retrofit
+  compile parent.ext.libraries.gsonConverter
 
+  compile parent.ext.libraries.permissionsModule
+  compile parent.ext.modules.gggJavaLib
+  compile parent.ext.modules.gggLogger
 
-  compile parent.ext.dependencies.permissionsModule
-  compile parent.ext.dependencies.retrofit
-  compile parent.ext.dependencies.gsonConverter
-
-  compile project (':ggg-java-lib')
-  compile project (':ggglogger')
-
-  testCompile parent.ext.testDependencies.junit
-  testCompile parent.ext.testDependencies.mockito
-  testCompile parent.ext.dependencies.gsonConverter
-  testCompile parent.ext.testDependencies.mockWebServer
+  testCompile parent.ext.testLibraries.junit
+  testCompile parent.ext.testLibraries.mockito
+  testCompile parent.ext.testLibraries.mockWebServer
 }
 
 //apply plugin: 'com.google.gms.google-services'
@@ -85,9 +81,9 @@ task javadoc(type: Javadoc) {
 }
 
 afterEvaluate {
-  javadoc.classpath += files(android.libraryVariants.collect { variant ->
-    variant.javaCompile.classpath.files
-  })
+  javadoc.classpath +=
+      files(android.libraryVariants.collect { variant -> variant.javaCompile.classpath.files
+      })
 }
 
 // build a jar with javadoc
