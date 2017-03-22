@@ -16,5 +16,24 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.utils;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class StringUtilsTest {
+
+  @Test public void shouldCapitalizeGivenText() {
+    String actual = StringUtils.capitalize("hello world");
+    String expected = "Hello world";
+    assertEquals(expected, actual);
+  }
+
+  @Test public void shouldReturnEmptyStringWithNullString() {
+    String actual = StringUtils.capitalize(null);
+    String expected = "";
+    assertEquals(expected, actual);
+  }
+
+}

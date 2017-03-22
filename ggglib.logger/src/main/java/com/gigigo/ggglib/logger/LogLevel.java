@@ -16,5 +16,24 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.logger;
+
+
+public enum LogLevel {
+  //enum int values here are according to android.util.Log Constants
+  ASSERT(7),
+  DEBUG(3),
+  ERROR(6),
+  INFO(4),
+  VERBOSE(2),
+  WARN(5);
+  private final int logLevelValue;
+
+  LogLevel(int logLevelValue) {
+    this.logLevelValue = logLevelValue;
+  }
+
+  public int getLogLevelValue() {
+    return logLevelValue;
+  }
+}

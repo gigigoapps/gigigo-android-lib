@@ -23,14 +23,17 @@ allprojects {
                  retrofit         : 'com.squareup.retrofit2:retrofit:2.0.2',
                  gsonConverter    : 'com.squareup.retrofit2:converter-gson:2.0.2',
 
-                 permissionsModule: 'com.github.GigigoGreenLabs:permissionsModule:2.3']
+                 gggLibPermissions: 'com.github.GigigoGreenLabs:permissionsModule:2.3']
 
     testLibraries = [mockito      : 'org.mockito:mockito-core:2.0.31-beta',
                      junit        : 'junit:junit:4.12',
                      mockWebServer: 'com.squareup.okhttp:mockwebserver:2.6.0']
 
-    modules = [gggLib    : project(":ggglib"),
-               gggJavaLib: project(":ggg-java-lib"),
-               gggLogger : project(":ggglogger")]
+    modules = [gggLibCore: project(":ggglib.core"),
+               gggLibUtils: project(":ggglib.utils"),
+               gggLibMappers: project(":ggglib.mappers"),
+               gggLibDevice: project(":ggglib.device"),
+               gggLibLogger : project(":ggglib.logger"),
+               gggLibNetwork   : project(":ggglib.network")]
   }
 }

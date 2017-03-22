@@ -16,5 +16,19 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.utils;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+public class HashingTest {
+
+  @Test public void shouldGenerateMd5WithLenghtAndIntegrity() throws Exception {
+    String firstMd5 = Hashing.generateMd5("Hello World");
+    String secondMd5 = Hashing.generateMd5("Hello World2");
+    assertEquals(firstMd5.length(), secondMd5.length());
+    assertNotEquals(firstMd5, secondMd5);
+  }
+}

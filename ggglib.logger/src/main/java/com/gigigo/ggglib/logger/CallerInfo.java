@@ -16,5 +16,32 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.logger;
+
+
+public class CallerInfo {
+
+  private static final String NOT_FOUND = "NotFound";
+
+  private String className;
+
+  private int classLineNumber;
+
+  public CallerInfo(){
+    className = NOT_FOUND;
+    classLineNumber = 0;
+  }
+
+  public CallerInfo(String className, int classLineNumber) {
+    this.className = className;
+    this.classLineNumber = classLineNumber;
+  }
+
+  public String getClassName() {
+    return className;
+  }
+
+  public String obtainlink(){
+    return "(" + className + ":" + classLineNumber + ")";
+  }
+}

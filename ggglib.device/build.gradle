@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
   compileSdkVersion parent.ext.androidCompileSdkVersion
@@ -8,10 +8,10 @@ android {
     minSdkVersion parent.ext.androidMinSdkVersion
     targetSdkVersion parent.ext.androidTargetSdkVersion
 
-    applicationId "com.gigigo.ggglib.demo_app"
     versionCode 1
     versionName "1.0"
   }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -25,7 +25,6 @@ dependencies {
 
   compile parent.ext.libraries.androidSupportV7
 
-  compile parent.ext.modules.gggLibCore
-
   testCompile parent.ext.testLibraries.junit
+  testCompile parent.ext.testLibraries.mockito
 }

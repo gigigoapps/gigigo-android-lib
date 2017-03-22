@@ -16,5 +16,22 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.core.business.model;
+
+import com.gigigo.ggglib.core.business.model.BusinessError;
+import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
+
+public class BusinessObjectTest {
+
+  @Test
+  public void testOKErrorBusinessInstance() throws Exception {
+    BusinessError businessError = BusinessError.createOKInstance();
+    assertNotNull(businessError);
+    assertEquals(businessError.getCode(), BusinessError.NO_ERROR_BUSINESS_ERROR_CODE);
+    assertEquals(businessError.getMessage(), BusinessError.NO_ERROR_BUSINESS_ERROR_MESSAGE);
+
+  }
+}
