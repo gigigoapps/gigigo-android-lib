@@ -21,9 +21,7 @@ allprojects {
     libraries = [androidSupportV7 : 'com.android.support:appcompat-v7:23.3.0',
 
                  retrofit         : 'com.squareup.retrofit2:retrofit:2.0.2',
-                 gsonConverter    : 'com.squareup.retrofit2:converter-gson:2.0.2',
-
-                 gggLibPermissions: 'com.github.GigigoGreenLabs:permissionsModule:2.3']
+                 gsonConverter    : 'com.squareup.retrofit2:converter-gson:2.0.2']
 
     testLibraries = [mockito      : 'org.mockito:mockito-core:2.0.31-beta',
                      junit        : 'junit:junit:4.12',
@@ -33,7 +31,6 @@ allprojects {
                gggLibUtils: project(":ggglib.utils"),
                gggLibMappers: project(":ggglib.mappers"),
                gggLibDevice: project(":ggglib.device"),
-               gggLibLogger : project(":ggglib.logger"),
-               gggLibNetwork   : project(":ggglib.network")]
+               gggLibLogger : project(":ggglib.logger")]
   }
 }

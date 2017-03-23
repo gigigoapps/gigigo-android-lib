@@ -17,4 +17,4 @@
  */
 
 include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+    ':ggglib.mappers', ':ggglib.logger'
