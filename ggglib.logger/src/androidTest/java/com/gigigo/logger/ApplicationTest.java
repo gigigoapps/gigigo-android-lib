@@ -16,5 +16,18 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.logger;
+
+import android.app.Application;
+import android.test.ApplicationTestCase;
+
+/**
+ * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
+ * Use Android project in wich this lib will be included as Android instrumentation/integration
+ * Test project
+ */
+public class ApplicationTest extends ApplicationTestCase<Application> {
+  public ApplicationTest() {
+    super(Application.class);
+  }
+}

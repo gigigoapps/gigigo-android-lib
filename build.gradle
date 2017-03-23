@@ -39,7 +39,7 @@ allprojects {
   ext {
     // Android config
     androidCompileSdkVersion = 23
-    androidBuildToolsVersion = '23.0.1'
+    androidBuildToolsVersion = '23.0.3'
     androidMinSdkVersion = 10
     androidTargetSdkVersion = 23
   }

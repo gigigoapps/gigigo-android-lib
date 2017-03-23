@@ -16,5 +16,10 @@
  * limitations under the License.
  */
 
-include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
-    ':ggglib.mappers', ':ggglib.logger', ':ggglib.network'
+package com.gigigo.ggglib.core.business.model;
+
+public enum BusinessContentType {
+  NO_ERROR_CONTENT,
+  EXCEPTION_CONTENT,
+  BUSINESS_ERROR_CONTENT
+}
