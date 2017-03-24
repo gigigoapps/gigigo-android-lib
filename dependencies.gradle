@@ -18,14 +18,10 @@
 
 allprojects {
   ext {
-    libraries = [androidSupportV7 : 'com.android.support:appcompat-v7:23.3.0',
-
-                 retrofit         : 'com.squareup.retrofit2:retrofit:2.0.2',
-                 gsonConverter    : 'com.squareup.retrofit2:converter-gson:2.0.2']
+    libraries = [androidSupportV7 : 'com.android.support:appcompat-v7:23.3.0']
 
     testLibraries = [mockito      : 'org.mockito:mockito-core:2.0.31-beta',
-                     junit        : 'junit:junit:4.12',
-                     mockWebServer: 'com.squareup.okhttp:mockwebserver:2.6.0']
+                     junit        : 'junit:junit:4.12']
 
     modules = [gggLibCore: project(":ggglib.core"),
                gggLibUtils: project(":ggglib.utils"),
