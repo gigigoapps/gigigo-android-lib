@@ -22,6 +22,9 @@ import java.util.Collection;
 
 final public class ConsistencyUtils {
 
+  private ConsistencyUtils() {
+  }
+
   public static <T> T checkNotNull(T object) {
     return checkNotNull(object, "The object is null");
   }

@@ -1,10 +1,7 @@
-# gigigo-utils-suite
+# Gigigo GGGLib
 
-[![Build Status](https://travis-ci.org/GigigoGreenLabs/gggUtilSuite.svg?branch=master)](https://travis-ci.org/GigigoGreenLabs/gggUtilSuite) 
-[![codecov.io](https://codecov.io/github/GigigoGreenLabs/gggUtilSuite/coverage.svg?branch=develop)](https://codecov.io/github/GigigoGreenLabs/gggUtilSuite)
-![Language](https://img.shields.io/badge/Language-Android-brightgreen.svg)
-[![](https://jitpack.io/v/GigigoGreenLabs/gggUtilSuite.svg)](https://jitpack.io/#GigigoGreenLabs/gggUtilSuite)
-
+[![Build Status](https://travis-ci.org/Gigigo-Android-Devs/gigigo-ggglib-library-android.svg?branch=master)](https://travis-ci.org/Gigigo-Android-Devs/gigigo-ggglib-library-android) 
+[![](https://jitpack.io/v/Gigigo-Android-Devs/gigigo-ggglib-library-android.svg)](https://jitpack.io/#Gigigo-Android-Devs/gigigo-ggglib-library-android)
 
 This is a suite with several java and android utilities for developing apps faster in Gigigo
 
