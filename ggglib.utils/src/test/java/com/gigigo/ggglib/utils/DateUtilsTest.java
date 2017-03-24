@@ -37,70 +37,70 @@ public class DateUtilsTest {
     return calendar.getTime();
   }
 
-  @Test public void testStringToDateWithFormatGoodDate() throws Exception {
-    String stringDate = "2013-09-29T18:46:19Z";
+  @Test public void testStringToDateWithGoodDateFormat() throws Exception {
+    String dateTimeString = "2013-09-29T18:46:19Z";
 
-    Date date = DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_FORMAT_TIME);
-
+    Date date =
+        DateUtils.stringToDateWithFormat(dateTimeString, DateFormatConstants.DATE_TIME_FORMAT);
     Date expectedDate = getCalendar(2013, Calendar.SEPTEMBER, 29, 18, 46, 19);
 
     assertThat(expectedDate, isDateEqualTo(date));
   }
 
-  @Test public void testStringToDateWithFormatNotEquals() throws Exception {
-    String stringDate = "2013-09-29T18:46:19Z";
+  @Test public void testStringToDateWithNotSameFormat() throws Exception {
+    String dateTimeString = "2013-09-29T18:46:19Z";
 
-    Date date = DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_FORMAT_TIME);
-
+    Date date =
+        DateUtils.stringToDateWithFormat(dateTimeString, DateFormatConstants.DATE_TIME_FORMAT);
     Date expectedDate = getCalendar(2000, Calendar.FEBRUARY, 10, 12, 12, 12);
 
     assertThat(expectedDate, not(isDateEqualTo(date)));
   }
 
-  @Test public void testStringToDateWithFormatWrongDate() throws Exception {
-    String stringDate = "Valor Fake";
+  @Test public void testStringToDateWithWrongDateFormatReturnDefaultDate() throws Exception {
+    String stringDate = "Fake value";
 
-    Date date = DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_FORMAT_TIME);
-
+    Date date = DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_TIME_FORMAT);
     Date expectedDate = new Date(0);
 
     assertThat(expectedDate, isDateEqualTo(date));
   }
 
-  @Test public void testStringToDateWithFormatNullDate() throws Exception {
-    Date date = DateUtils.stringToDateWithFormat(null, DateFormatConstants.DATE_FORMAT_TIME);
+  @Test public void testStringToDateWithNullDateFormatReturnNotNullDate() throws Exception {
+    Date date = DateUtils.stringToDateWithFormat(null, DateFormatConstants.DATE_TIME_FORMAT);
     assertNotNull(date);
   }
 
-  @Test public void testDateToStringWithFormatNullDate() throws Exception {
-    String date = DateUtils.dateToStringWithFormat(null, DateFormatConstants.DATE_FORMAT_TIME);
+  @Test public void testDateToStringWithNullDateFormatReturnNullDate() throws Exception {
+    String date = DateUtils.dateToStringWithFormat(null, DateFormatConstants.DATE_TIME_FORMAT);
     assertNull(date);
   }
 
-  @Test public void testDateToStringWithFormatOk() throws Exception {
+  @Test public void testDateToStringWithGoodFormat() throws Exception {
+    String expectedDate = "2013-09-29T18:46:19Z";
     Date date = getCalendar(2013, Calendar.SEPTEMBER, 29, 18, 46, 19);
 
-    String expectedDate =
-        DateUtils.dateToStringWithFormat(date, DateFormatConstants.DATE_FORMAT_TIME);
+    String actualDate =
+        DateUtils.dateToStringWithFormat(date, DateFormatConstants.DATE_TIME_FORMAT);
 
-    assertEquals("2013-09-29T18:46:19Z", expectedDate);
+    assertEquals(expectedDate, actualDate);
   }
 
-  @Test public void testDateToStringWithFormatNoTimeOk() throws Exception {
+  @Test public void testDateToStringWithNoTimeFormat() throws Exception {
+    String expectedDate = "2013-09-29";
     Date date = getCalendar(2013, Calendar.SEPTEMBER, 29, 18, 46, 19);
 
-    String expectedDate =
-        DateUtils.dateToStringWithFormat(date, DateFormatConstants.DATE_FORMAT_NO_TIME);
+    String actualDate =
+        DateUtils.dateToStringWithFormat(date, DateFormatConstants.DATE_NO_TIME_FORMAT);
 
-    assertEquals("2013-09-29", expectedDate);
+    assertEquals(expectedDate, actualDate);
   }
 
-  @Test public void testStringToDateWithFormatNoTimeGoodDate() throws Exception {
+  @Test public void testStringToDateWithGoodDateNoTimeFormat() throws Exception {
     String stringDate = "2013-09-29";
 
     Date date =
-        DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_FORMAT_NO_TIME);
-
+        DateUtils.stringToDateWithFormat(stringDate, DateFormatConstants.DATE_NO_TIME_FORMAT);
     Date expectedDate = getCalendar(2013, Calendar.SEPTEMBER, 29, 0, 0, 0);
 
     assertThat(expectedDate, isDateEqualTo(date));

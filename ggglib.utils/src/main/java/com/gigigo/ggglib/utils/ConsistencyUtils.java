@@ -22,8 +22,6 @@ import java.util.Collection;
 
 final public class ConsistencyUtils {
 
-  private ConsistencyUtils() { }
-
   public static <T> T checkNotNull(T object) {
     return checkNotNull(object, "The object is null");
   }
@@ -35,16 +33,16 @@ final public class ConsistencyUtils {
     return object;
   }
 
+  public static String checkEmptyString(String object) {
+    return checkEmptyString(object, "The string is null");
+  }
+
   public static String checkEmptyString(String object, String message) {
     object = checkNotNull(object, message);
     if (object.trim() == "") {
       throw new NullPointerException(message);
     }
     return object;
-  }
-
-  public static String checkEmptyString(String object) {
-    return checkEmptyString(object, "The string is null");
   }
 
   public static <T> T checkInstance(Object obj, Class<T> type) {

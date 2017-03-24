@@ -25,8 +25,6 @@ import java.util.Date;
 
 final public class DateUtils {
 
-  private DateUtils() { }
-
   public static Date stringToDateWithFormat(String stringToConvert, String dateFormat) {
     if (stringToConvert != null) {
       try {

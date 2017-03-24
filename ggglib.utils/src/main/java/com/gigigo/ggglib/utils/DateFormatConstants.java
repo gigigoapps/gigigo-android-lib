@@ -20,8 +20,6 @@ package com.gigigo.ggglib.utils;
 
 final public class DateFormatConstants {
 
-  private DateFormatConstants() { }
-
-  public static final String DATE_FORMAT_TIME = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-  public static final String DATE_FORMAT_NO_TIME = "yyyy-MM-dd";
+  public static final String DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+  public static final String DATE_NO_TIME_FORMAT = "yyyy-MM-dd";
 }

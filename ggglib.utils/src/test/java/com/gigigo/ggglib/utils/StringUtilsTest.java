@@ -30,6 +30,12 @@ public class StringUtilsTest {
     assertEquals(expected, actual);
   }
 
+  @Test public void shouldReturnUnchangedStringGivenCapitalizedText() {
+    String actual = StringUtils.capitalize("Hello world");
+    String expected = "Hello world";
+    assertEquals(expected, actual);
+  }
+
   @Test public void shouldReturnEmptyStringWithNullString() {
     String actual = StringUtils.capitalize(null);
     String expected = "";
