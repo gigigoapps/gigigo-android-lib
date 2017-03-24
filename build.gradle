@@ -26,7 +26,7 @@ buildscript {
 
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.2'
+    classpath 'com.android.tools.build:gradle:2.3.0'
 //    classpath 'com.google.gms:google-services:2.0.0-alpha5'
     classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
     // NOTE: Do not place your application dependencies here; they belong
@@ -38,13 +38,10 @@ allprojects {
 
   ext {
     // Android config
-    androidCompileSdkVersion = 23
-    androidBuildToolsVersion = '23.0.1'
+    androidCompileSdkVersion = 25
+    androidBuildToolsVersion = '25.0.0'
     androidMinSdkVersion = 10
-    androidTargetSdkVersion = 23
-    androidApplicationId = 'com.gigigo.ggglib.utilssuite'
-    androidVersionCode = 1
-    androidVersionName = '1.0'
+    androidTargetSdkVersion = 25
   }
 
   repositories {

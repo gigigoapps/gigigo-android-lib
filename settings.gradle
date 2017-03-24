@@ -16,4 +16,5 @@
  * limitations under the License.
  */
 
-include ':ggglogger', ':ggglib', ':ggg-java-lib', ':permissionModule'//, ':testapplication'
+include ':app', ':ggglib.core', ':ggglib.utils', ':ggglib.device',
+    ':ggglib.mappers', ':ggglib.logger'
