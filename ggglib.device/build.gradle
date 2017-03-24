@@ -25,6 +25,8 @@ dependencies {
 
   compile parent.ext.libraries.androidSupportV7
 
+  compile parent.ext.modules.gggLibUtils
+
   testCompile parent.ext.testLibraries.junit
   testCompile parent.ext.testLibraries.mockito
 }
