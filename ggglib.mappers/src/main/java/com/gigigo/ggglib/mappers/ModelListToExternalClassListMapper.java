@@ -20,7 +20,6 @@ package com.gigigo.ggglib.mappers;
 
 import java.util.List;
 
-
 public interface ModelListToExternalClassListMapper<Model, ExternalClass> {
   List<ExternalClass> modelListToExternalClassList(List<Model> modelList);
 }

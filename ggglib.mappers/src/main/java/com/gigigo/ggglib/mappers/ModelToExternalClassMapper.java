@@ -18,7 +18,6 @@
 
 package com.gigigo.ggglib.mappers;
 
-
 public interface ModelToExternalClassMapper<Model, ExternalClass> {
   ExternalClass modelToExternalClass(Model model);
 }

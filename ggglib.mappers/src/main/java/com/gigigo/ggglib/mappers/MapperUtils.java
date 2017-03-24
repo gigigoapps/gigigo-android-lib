@@ -18,30 +18,25 @@
 
 package com.gigigo.ggglib.mappers;
 
-
 public class MapperUtils {
 
   public static <Model, Data> Model checkNullDataResponse(
-      ExternalClassToModelMapper<Data, Model> externalClassToModelMapper,
-      Data dataObject){
+      ExternalClassToModelMapper<Data, Model> externalClassToModelMapper, Data dataObject) {
 
-    if (dataObject == null){
+    if (dataObject == null) {
       return null;
-    }else{
+    } else {
       return externalClassToModelMapper.externalClassToModel(dataObject);
     }
-
   }
 
   public static <Model, Data> Data checkNullDataRequest(
-      ModelToExternalClassMapper<Model, Data> responseMapper,
-      Model modelObject){
+      ModelToExternalClassMapper<Model, Data> responseMapper, Model modelObject) {
 
-    if (modelObject == null){
+    if (modelObject == null) {
       return null;
-    }else{
+    } else {
       return responseMapper.modelToExternalClass(modelObject);
     }
-
   }
 }

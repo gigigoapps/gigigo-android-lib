@@ -18,6 +18,6 @@
 
 package com.gigigo.ggglib.mappers;
 
-
-public interface ListMapper<M, A> extends ModelListToExternalClassListMapper<M, A>, ExternalClassListToModelListMapper<A, M> {
+public interface ListMapper<M, A>
+    extends ModelListToExternalClassListMapper<M, A>, ExternalClassListToModelListMapper<A, M> {
 }

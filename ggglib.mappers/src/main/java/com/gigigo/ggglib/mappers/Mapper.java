@@ -18,9 +18,6 @@
 
 package com.gigigo.ggglib.mappers;
 
-
-
-public interface Mapper<M, A> extends ExternalClassToModelMapper<A, M>,
-    ModelToExternalClassMapper<M, A> {
-
+public interface Mapper<M, A>
+    extends ExternalClassToModelMapper<A, M>, ModelToExternalClassMapper<M, A> {
 }
