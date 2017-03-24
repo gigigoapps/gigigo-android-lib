@@ -18,20 +18,17 @@
 
 package com.gigigo.ggglib.core.business.model;
 
-import com.gigigo.ggglib.core.business.model.BusinessError;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class BusinessObjectTest {
 
-  @Test
-  public void testOKErrorBusinessInstance() throws Exception {
+  @Test public void testOKErrorBusinessInstance() throws Exception {
     BusinessError businessError = BusinessError.createOKInstance();
     assertNotNull(businessError);
     assertEquals(businessError.getCode(), BusinessError.NO_ERROR_BUSINESS_ERROR_CODE);
     assertEquals(businessError.getMessage(), BusinessError.NO_ERROR_BUSINESS_ERROR_MESSAGE);
-
   }
 }
