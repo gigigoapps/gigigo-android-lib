@@ -15,19 +15,17 @@ android:
   - sys-img-armeabi-v7a-android-23
   - extra-android-m2repository
   licenses:
-  - 'android-sdk-license-.+'
+  - android-sdk-license-.+
 notifications:
   slack:
-    secure: kHEUf6ScZYnz5h7n/OzODFNYePv00M/BCBkXGL3kVz2F7mBJw0emygvNsSOuarbKiBdpc5dgHnlpXKbocd6IXc9s++N+jLn5EfZJR9AWUfdZLP5VcOQf/uAI3EqgA3ry3SIZYwheNyrqL49dxnf8Vh/EZevKjU9gv1m29BJcmywKc0pxPMDiM9GSeMYtqbZCpsqOwkumGuggMlWhNE3ZKydHYKehQkwYxZhWhQAqJyUeJUHJSJ5pU92FI/CSXwDp6r2nBJEV5SwyfhzK4zRzS1KCaskfUhYk2IsMUmUzYvZw6FNS/WrfVraWhiC3vhFyT3QNpSQN5I42ejmLSMrEBdVIkZzaovGIWi7fZZP/8Oa7fF6CpRtc4mszRPIbwfWKWftpuK5aPyeNerZ8WrweC5Jecp8DdPQ+7LTq6Zs/njGO/U3mQlQW+FYE/3Rvb2iHx2nxju4Sx8QFR6XwEnmblJ9sIhu9i/NPKUXcs8APDMGzUs97pErF0bETpTKG+2e2EanoVAaknz88LHCeN02rwjh2R0q87hqOv8tY13QbKlp7seRxx42F1mgZ5fR/Ejq5zqnx3dv+t+drDnPTvqro7kMxDrgqozdvIx9OdbcJ9BG0V73vrBS2phKoPj8H7XMh0jeXcnAyMkeiNcCqn89jouTFt1nHUA9GBgepmXVLm8o=
+    secure: Ebtcxx9sROg9FbpTwFchxL24POD2OchXvJP3/TLeJ3QkBsVedgfeWh/pFGkGVtfOvaXmxFzrfif0b+2B3x56kFdfAprNvcCvIvfFks8xeeQYRibKSMzrOG2Wu8D1UeyBbWfyAhhOClKbTWLnE7/8Vwa5esZFoGJIvS8JBb/QfVdN4WifsLJXsEW4Ydr84dyfqokA9rqwUotDJPa+3SHD2pZG6FTGD4ewuxdJvyJxTGJlXkCXuik05cafe36/0+5Yl1w7OzBzAiS1g5Vp+qrcDLihoPjvCzufmbt/ecjHWHT0uHd9UTSu1wmpXaTDOZJf30advg1FWJslzBQeNBKh0ZY/+Zgw9tRqsLPPqIdj9avqgOeGfdVaZmAe15sL3UaeacaPcvQl3XgvxE/4FTpR9mMdSCLYIraylcfGpPQr1Wl3UUAhf/xBLIdhnmjAzvSqx9+7cPyPl6I1axOkXRb4e1SIw9Izq+lFf+U54lU/IoIyc4SiG6n6frzgZIwOKYNLOwfmPhEE37QPb+0eRhTz0R9Kb7m099iPVfYo0Ul5f0NWPyJD3avwDr8GSe6XC74wfFnVboA6bTIwWJzRq7X+qFTIkJdHsAdRysjsD6BenzFWLSP01NOO0v4DED0A/h++VQerlDqbgCj0FjbfSuxXNrLd4GmoRyVA1hkq0rdc1vg=
 before_install:
-  - pip install --user codecov
-  - chmod +x gradlew
-
+- pip install --user codecov
+- chmod +x gradlew
 script:
-  - ./gradlew build jacocoTestReport
-  - ./gradlew check
-
+- "./gradlew build jacocoTestReport"
+- "./gradlew check"
 after_success:
-  - ./gradlew jacocoFullReport
-  - codecov
-  - bash <(curl -s https://codecov.io/bash)
+- "./gradlew jacocoFullReport"
+- codecov
+- bash <(curl -s https://codecov.io/bash)
