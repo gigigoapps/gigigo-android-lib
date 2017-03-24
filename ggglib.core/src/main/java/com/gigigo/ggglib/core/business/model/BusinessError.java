@@ -50,7 +50,7 @@ public class BusinessError<ExtraErrorInfo> {
     return businessError;
   }
 
-  public static BusinessError createKoInstance(String message) {
+  public static BusinessError createKOInstance(String message) {
     BusinessError businessError = new BusinessError(EXCEPTION_BUSINESS_ERROR_CODE, message,
         BusinessContentType.EXCEPTION_CONTENT);
     return businessError;

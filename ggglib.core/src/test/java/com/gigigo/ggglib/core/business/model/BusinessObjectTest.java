@@ -25,10 +25,22 @@ import static org.junit.Assert.assertNotNull;
 
 public class BusinessObjectTest {
 
-  @Test public void testOKErrorBusinessInstance() throws Exception {
+  @Test public void testOKErrorBusinessInstance() {
     BusinessError businessError = BusinessError.createOKInstance();
+
     assertNotNull(businessError);
     assertEquals(businessError.getCode(), BusinessError.NO_ERROR_BUSINESS_ERROR_CODE);
     assertEquals(businessError.getMessage(), BusinessError.NO_ERROR_BUSINESS_ERROR_MESSAGE);
+    assertEquals(businessError.getBusinessContentType(), BusinessContentType.NO_ERROR_CONTENT);
+  }
+
+  @Test public void testKOErrorBusinessInstance() {
+    String errorMessage = "error message";
+    BusinessError businessError = BusinessError.createKOInstance(errorMessage);
+
+    assertNotNull(businessError);
+    assertEquals(businessError.getCode(), BusinessError.EXCEPTION_BUSINESS_ERROR_CODE);
+    assertEquals(businessError.getMessage(), errorMessage);
+    assertEquals(businessError.getBusinessContentType(), BusinessContentType.EXCEPTION_CONTENT);
   }
 }
