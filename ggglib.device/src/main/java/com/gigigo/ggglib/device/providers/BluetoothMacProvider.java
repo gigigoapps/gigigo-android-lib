@@ -22,15 +22,15 @@ import android.bluetooth.BluetoothAdapter;
 
 public class BluetoothMacProvider {
 
-    public BluetoothAdapter provideBluetoothDefaultAdapter() {
-        return BluetoothAdapter.getDefaultAdapter();
-    }
+  public BluetoothAdapter provideBluetoothDefaultAdapter() {
+    return BluetoothAdapter.getDefaultAdapter();
+  }
 
-    public String provideBluetoothMac(BluetoothAdapter mBluetoothAdapter) {
-        if (mBluetoothAdapter == null) {
-            return null;
-        }else {
-            return mBluetoothAdapter.getAddress();
-        }
+  public String provideBluetoothMacAddress(BluetoothAdapter mBluetoothAdapter) {
+    if (mBluetoothAdapter == null) {
+      return null;
+    } else {
+      return mBluetoothAdapter.getAddress();
     }
+  }
 }

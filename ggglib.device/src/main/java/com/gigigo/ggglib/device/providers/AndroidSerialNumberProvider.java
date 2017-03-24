@@ -20,7 +20,7 @@ package com.gigigo.ggglib.device.providers;
 
 import android.os.Build;
 
-public class AndrodSerialNumberProvider {
+public class AndroidSerialNumberProvider {
 
     public String provideAndroidSerialNumber() {
         return Build.SERIAL;

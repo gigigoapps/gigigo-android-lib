@@ -21,7 +21,7 @@ package com.gigigo.ggglib.device;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.net.wifi.WifiManager;
-import com.gigigo.ggglib.device.providers.AndrodSerialNumberProvider;
+import com.gigigo.ggglib.device.providers.AndroidSerialNumberProvider;
 import com.gigigo.ggglib.device.providers.AndroidSecureIdProvider;
 import com.gigigo.ggglib.device.providers.BluetoothMacProvider;
 import com.gigigo.ggglib.device.providers.HandsetProvider;
@@ -29,35 +29,34 @@ import com.gigigo.ggglib.device.providers.WifiMacProvider;
 
 public class DeviceInfoProvider {
 
-    public static String getHandset() {
-        HandsetProvider handset = new HandsetProvider();
-        return handset.provideHandset();
-    }
+  public static String getHandset() {
+    HandsetProvider handset = new HandsetProvider();
+    return handset.provideHandset();
+  }
 
-    public static String getAndroidSecureId(Context context) {
-        AndroidSecureIdProvider androidSecureId = new AndroidSecureIdProvider();
-        return androidSecureId.provideAndroidSecureId(context);
-    }
+  public static String getAndroidSecureId(Context context) {
+    AndroidSecureIdProvider androidSecureIdProvider = new AndroidSecureIdProvider();
+    return androidSecureIdProvider.provideAndroidSecureId(context);
+  }
 
-    public static String getAndroidSerialNumber() {
-        AndrodSerialNumberProvider androdSerialNumber = new AndrodSerialNumberProvider();
-        return androdSerialNumber.provideAndroidSerialNumber();
-    }
+  public static String getAndroidSerialNumber() {
+    AndroidSerialNumberProvider androidSerialNumberProvider = new AndroidSerialNumberProvider();
+    return androidSerialNumberProvider.provideAndroidSerialNumber();
+  }
 
-    public static String getWifiMac(Context context) {
-        WifiMacProvider provider = new WifiMacProvider();
-        WifiManager wifiManager = provider.provideWifiManager(context);
-        return provider.provideWifiMac(wifiManager);
+  public static String getWifiMac(Context context) {
+    WifiMacProvider wifiMacProvider = new WifiMacProvider();
+    WifiManager wifiManager = wifiMacProvider.provideWifiManager(context);
+    return wifiMacProvider.provideWifiMacAddress(wifiManager);
+  }
 
-    }
+  public static String getBluetoothMac() {
+    BluetoothMacProvider bluetoothMacProvider = new BluetoothMacProvider();
+    BluetoothAdapter adapter = bluetoothMacProvider.provideBluetoothDefaultAdapter();
+    return bluetoothMacProvider.provideBluetoothMacAddress(adapter);
+  }
 
-    public static String getBluetoothMac() {
-        BluetoothMacProvider provider = new BluetoothMacProvider();
-        BluetoothAdapter adapter = provider.provideBluetoothDefaultAdapter();
-        return provider.provideBluetoothMac(adapter);
-    }
-
-    public static String getOsVersion() {
-        return String.valueOf(AndroidSdkVersion.getAndroidSdkVersion());
-    }
+  public static String getOsVersion() {
+    return String.valueOf(AndroidSdkVersion.getAndroidSdkVersion());
+  }
 }

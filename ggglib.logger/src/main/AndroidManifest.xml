@@ -17,8 +17,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gigigo.ggglib.logger"
-    >
+    package="com.gigigo.ggglib.logger">
 
   <application
       android:allowBackup="true"

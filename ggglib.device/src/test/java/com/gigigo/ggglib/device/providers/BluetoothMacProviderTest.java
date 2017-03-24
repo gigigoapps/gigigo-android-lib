@@ -3,52 +3,34 @@ package com.gigigo.ggglib.device.providers;
 import android.bluetooth.BluetoothAdapter;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 public class BluetoothMacProviderTest {
 
-    @Mock
-    BluetoothAdapter bluetoothAdapter;
+  @Mock BluetoothAdapter bluetoothAdapter;
 
-    @Before
-    public void setupBluetoothMacProviderTest(){
-        MockitoAnnotations.initMocks(this);
-    }
+  private BluetoothMacProvider bluetoothMacProvider;
 
-    /*
-    @Test
-    public void testProvideBluetoothMacOk() throws Exception {
-        String mac = "0F:34:12:45:56:34";
+  @Before public void setupBluetoothMacProviderTest() {
+    MockitoAnnotations.initMocks(this);
 
-        BluetoothMacProvider bluetoothMacProvider = new BluetoothMacProvider();
+    bluetoothMacProvider = new BluetoothMacProvider();
+  }
 
-        BluetoothMacProvider spyBluetoothMacProvider = spy(bluetoothMacProvider);
+  @Test public void testProvideBluetoothMacOk() {
+    String mac = "0F:34:12:45:56:34";
 
-        when(spyBluetoothMacProvider.provideBluetoothDefaultAdapter()).thenReturn(bluetoothAdapter);
+    when(bluetoothAdapter.getAddress()).thenReturn(mac);
 
-        when(bluetoothAdapter.getAddress()).thenReturn(mac);
+    assertEquals(mac, bluetoothMacProvider.provideBluetoothMacAddress(bluetoothAdapter));
+  }
 
-        String bluetoothMac = spyBluetoothMacProvider.provideBluetoothMac(bluetoothAdapter);
-
-        assertEquals(mac, bluetoothMac);
-    }
-*/
-
-    @Test
-    public void testProvideBluetoothMacNotSupported() throws Exception {
-
-        BluetoothMacProvider bluetoothMacProvider = new BluetoothMacProvider();
-
-        String bluetoothMac = bluetoothMacProvider.provideBluetoothMac(null);
-
-        assertNull(bluetoothMac);
-    }
+  @Test public void testProvideBluetoothMacNotSupported() {
+    assertNull(bluetoothMacProvider.provideBluetoothMacAddress(null));
+  }
 }

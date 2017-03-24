@@ -24,17 +24,16 @@ import android.net.wifi.WifiManager;
 
 public class WifiMacProvider {
 
+  public WifiManager provideWifiManager(Context context) {
+    return (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+  }
 
-    public WifiManager provideWifiManager(Context context) {
-        return (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+  public String provideWifiMacAddress(WifiManager wifiManager) {
+    try {
+      WifiInfo info = wifiManager.getConnectionInfo();
+      return info.getMacAddress();
+    } catch (Exception e) {
+      return null;
     }
-
-    public String provideWifiMac(WifiManager wifiManager) {
-        try {
-            WifiInfo info = wifiManager.getConnectionInfo();
-            return info.getMacAddress();
-        }catch(NullPointerException e){
-            return null;
-        }
-    }
+  }
 }

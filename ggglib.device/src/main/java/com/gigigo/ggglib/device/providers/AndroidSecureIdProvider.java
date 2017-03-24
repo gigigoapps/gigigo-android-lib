@@ -23,11 +23,11 @@ import android.provider.Settings;
 
 public class AndroidSecureIdProvider {
 
-    public String provideAndroidSecureId(Context context) {
-        try {
-            return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
-        }catch (NullPointerException e){
-            return null;
-        }
+  public String provideAndroidSecureId(Context context) {
+    try {
+      return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+    } catch (NullPointerException e) {
+      return null;
     }
+  }
 }
