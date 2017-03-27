@@ -17,6 +17,7 @@
  */
 
 apply from: 'dependencies.gradle'
+apply from: 'common_methods.gradle'
 apply from: 'gradle/jacoco.gradle'
 
 buildscript {
