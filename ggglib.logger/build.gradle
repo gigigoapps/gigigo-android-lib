@@ -29,8 +29,8 @@ android {
     minSdkVersion parent.ext.androidMinSdkVersion
     targetSdkVersion parent.ext.androidTargetSdkVersion
 
-    versionCode 1
-    versionName "1.0"
+    versionCode generateAutoVersionCode()
+    versionName generateVersionName(1,0,0)
   }
 
   buildTypes {
