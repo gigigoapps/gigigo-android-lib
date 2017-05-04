@@ -3,4 +3,30 @@ apply plugin: 'maven'
 
 dependencies {
   testCompile parent.ext.testLibraries.junit
+  testCompile parent.ext.testLibraries.mockito
+}
+
+test {
+  testLogging {
+    events 'started', 'passed'
+  }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = 'javadoc'
+  from javadoc.destinationDir
+}
+
+artifacts {
+  archives sourcesJar
+  archives javadocJar
+}
+
+checkstyle {
+  configFile = rootProject.file('checkstyle.xml')
 }
