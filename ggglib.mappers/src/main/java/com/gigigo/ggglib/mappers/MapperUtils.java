@@ -19,6 +19,8 @@
 package com.gigigo.ggglib.mappers;
 
 public class MapperUtils {
+  private MapperUtils() {
+  }
 
   public static <Model, Data> Model checkNullDataResponse(
       ExternalClassToModelMapper<Data, Model> externalClassToModelMapper, Data dataObject) {
