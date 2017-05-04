@@ -18,15 +18,15 @@
 
 allprojects {
   ext {
-    libraries = [androidSupportV7 : 'com.android.support:appcompat-v7:25.3.0']
+    libraries = [androidSupportV7: 'com.android.support:appcompat-v7:25.3.0']
 
-    testLibraries = [mockito      : 'org.mockito:mockito-core:2.7.9',
-                     junit        : 'junit:junit:4.12']
+    testLibraries = [mockito: 'org.mockito:mockito-core:2.7.9',
+                     junit  : 'junit:junit:4.12']
 
-    modules = [gggLibCore: project(":ggglib.core"),
-               gggLibUtils: project(":ggglib.utils"),
+    modules = [gggLibCore   : project(":ggglib.core"),
+               gggLibDevice : project(":ggglib.device"),
+               gggLibLogger : project(":ggglib.logger"),
                gggLibMappers: project(":ggglib.mappers"),
-               gggLibDevice: project(":ggglib.device"),
-               gggLibLogger : project(":ggglib.logger")]
+               gggLibUtils  : project(":ggglib.utils")]
   }
 }
