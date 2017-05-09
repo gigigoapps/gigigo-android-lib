@@ -26,7 +26,8 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
-  compile parent.ext.modules.gggLibUtils
+  //compile parent.ext.modules.gggLibUtils
+  compile('com.github.gigigoapps.gigigo-android-lib:ggglib.utils:1.0.6') {transitive = true}
 
   testCompile parent.ext.testLibraries.junit
   testCompile parent.ext.testLibraries.mockito
