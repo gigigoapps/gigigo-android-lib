@@ -19,8 +19,9 @@
 package com.gigigo.ggglib.utils;
 
 import java.util.Collection;
+import java.util.Iterator;
 
-final public class ConsistencyUtils {
+public final class ConsistencyUtils {
 
   private ConsistencyUtils() {
   }
@@ -36,6 +37,14 @@ final public class ConsistencyUtils {
     return object;
   }
 
+  public static boolean isObjectNull(Object object) {
+    boolean isNull = false;
+    if (object == null) {
+      isNull = true;
+    }
+    return isNull;
+  }
+
   public static String checkEmptyString(String object) {
     return checkEmptyString(object, "The string is null");
   }
@@ -48,6 +57,16 @@ final public class ConsistencyUtils {
     return object;
   }
 
+  public static boolean isStringEmpty(String string) {
+    boolean isEmpty = false;
+    if (!isObjectNull(string)) {
+      if (string.trim().equals("")) {
+        isEmpty = true;
+      }
+    }
+    return isEmpty;
+  }
+
   public static <T> T checkInstance(Object obj, Class<T> type) {
     if (type.isInstance(obj)) {
       T t = type.cast(obj);
@@ -55,6 +74,16 @@ final public class ConsistencyUtils {
     } else {
       throw new ClassCastException(obj.getClass() + " incompatible type with " + type.getName());
     }
+  }
+
+  public static <T> boolean isInstanceOf(Object obj, Class<T> type) {
+    boolean isInstance = false;
+    if (type.isInstance(obj)) {
+      isInstance = true;
+    } else {
+      isInstance = false;
+    }
+    return isInstance;
   }
 
   public static <T> Collection<T> checkNotEmpty(Collection<T> container) {
@@ -72,5 +101,29 @@ final public class ConsistencyUtils {
       }
     }
     return container;
+  }
+
+  public static boolean hasCollectionNullItem(Collection collection) {
+    boolean hasNull = false;
+    Iterator iterator = collection.iterator();
+    while (iterator.hasNext() && !hasNull) {
+      Object object = iterator.next();
+      if (object == null) {
+        hasNull = true;
+      }
+    }
+    return hasNull;
+  }
+
+  public static boolean isCollectionEmpty(Collection collection) {
+    boolean isEmpty = true;
+    Iterator iterator = collection.iterator();
+    while (iterator.hasNext() && isEmpty) {
+      Object object = iterator.next();
+      if (object != null) {
+        isEmpty = false;
+      }
+    }
+    return isEmpty;
   }
 }
