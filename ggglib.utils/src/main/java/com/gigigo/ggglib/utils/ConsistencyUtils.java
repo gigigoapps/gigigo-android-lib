@@ -26,35 +26,12 @@ public final class ConsistencyUtils {
   private ConsistencyUtils() {
   }
 
-  public static <T> T checkNotNull(T object) {
-    return checkNotNull(object, "The object is null");
-  }
-
-  public static <T> T checkNotNull(T object, String message) {
-    if (object == null) {
-      throw new NullPointerException(message);
-    }
-    return object;
-  }
-
   public static boolean isObjectNull(Object object) {
     boolean isNull = false;
     if (object == null) {
       isNull = true;
     }
     return isNull;
-  }
-
-  public static String checkEmptyString(String object) {
-    return checkEmptyString(object, "The string is null");
-  }
-
-  public static String checkEmptyString(String object, String message) {
-    object = checkNotNull(object, message);
-    if (object.trim() == "") {
-      throw new NullPointerException(message);
-    }
-    return object;
   }
 
   public static boolean isStringEmpty(String string) {
@@ -67,40 +44,12 @@ public final class ConsistencyUtils {
     return isEmpty;
   }
 
-  public static <T> T checkInstance(Object obj, Class<T> type) {
-    if (type.isInstance(obj)) {
-      T t = type.cast(obj);
-      return t;
-    } else {
-      throw new ClassCastException(obj.getClass() + " incompatible type with " + type.getName());
-    }
-  }
-
   public static <T> boolean isInstanceOf(Object obj, Class<T> type) {
     boolean isInstance = false;
     if (type.isInstance(obj)) {
       isInstance = true;
-    } else {
-      isInstance = false;
     }
     return isInstance;
-  }
-
-  public static <T> Collection<T> checkNotEmpty(Collection<T> container) {
-    if (checkNotNull(container).isEmpty()) {
-      throw new IllegalArgumentException("Container cannot be null or empty");
-    }
-    return container;
-  }
-
-  public static <T> Collection<T> containsNoNulls(Collection<T> container) {
-    container = checkNotNull(container);
-    for (T item : container) {
-      if (item == null) {
-        throw new NullPointerException("Container cannot contain null values");
-      }
-    }
-    return container;
   }
 
   public static boolean hasCollectionNullItem(Collection collection) {
