@@ -19,14 +19,12 @@
 package com.gigigo.ggglib.utils;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 
 public class ConsistencyUtilsTest {
 
@@ -89,7 +87,6 @@ public class ConsistencyUtilsTest {
     assertEquals(false, hasItemNull);
   }
 
-
   @Test public void testIsCollectionEmptyWhenCollectionEmptyReturnTrue() {
     List collection = new ArrayList();
     boolean isEmpty = ConsistencyUtils.isCollectionEmpty(collection);
@@ -110,5 +107,4 @@ public class ConsistencyUtilsTest {
     boolean isEmpty = ConsistencyUtils.isCollectionEmpty(collection);
     assertEquals(true, isEmpty);
   }
-
 }
