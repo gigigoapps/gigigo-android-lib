@@ -27,6 +27,7 @@ public class InvokerInspector {
    * this callingmethod put 0 if you want the previous line that call to this callingmethod,
    * for example if you put the caller of getinvoker in a catch and you want to retrive the
    * line fires the catch put 1
+   * @param gggLogClass to-do
    */
   public void calculateInvoker(int stepsBack, Class gggLogClass) {
 
