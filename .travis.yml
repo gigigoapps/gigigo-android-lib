@@ -6,10 +6,7 @@ env:
   - ANDROID_ABI=armeabi-v7a
 android:
   components:
-  - tools
-  - platform-tools
   - extra-android-support
-  - extra-google-m2repository
   - sys-img-armeabi-v7a-android-23
   licenses:
   - android-sdk-license-.+
@@ -19,9 +16,14 @@ notifications:
 before_install:
 - pip install --user codecov
 - chmod +x gradlew
+install:
+  - echo y | android update sdk --no-ui --all --filter tools
+  - echo y | android update sdk --no-ui --all --filter platform-tools
+  - echo y | android update sdk --no-ui --all --filter build-tools-24.0.3
+  - echo y | android update sdk --no-ui --all --filter android-24
+  - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
+  - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
 script:
-- "android update sdk --no-ui --all --filter build-tools-24.0.3,android-24,extra-android-m2repository"
-- "sdkmanager --list"
 - "./gradlew build jacocoTestReport"
 - "./gradlew check"
 after_success:
