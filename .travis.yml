@@ -8,12 +8,9 @@ android:
   components:
   - tools
   - platform-tools
-  - build-tools-24.0.3
-  - android-24
   - extra-android-support
   - extra-google-m2repository
   - sys-img-armeabi-v7a-android-23
-  - extra-android-m2repository
   licenses:
   - android-sdk-license-.+
 notifications:
@@ -23,6 +20,8 @@ before_install:
 - pip install --user codecov
 - chmod +x gradlew
 script:
+- "android update sdk --no-ui --all --filter build-tools-24.0.3,android-24,extra-android-m2repository"
+- "sdkmanager --list"
 - "./gradlew build jacocoTestReport"
 - "./gradlew check"
 after_success:
