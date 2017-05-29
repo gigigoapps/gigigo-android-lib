@@ -1,6 +1,10 @@
 language: android
 jdk: oraclejdk8
 
+branches:
+  only:
+  - master
+
 before_cache:
   - rm -f  ${TRAVIS_BUILD_DIR}/.gradle/caches/modules-2/modules-2.lock
   - rm -fr ${TRAVIS_BUILD_DIR}/.gradle/caches/*/plugin-resolution/
