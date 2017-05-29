@@ -1,6 +1,15 @@
 language: android
 jdk: oraclejdk8
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
 notifications:
   slack:
     secure: Ebtcxx9sROg9FbpTwFchxL24POD2OchXvJP3/TLeJ3QkBsVedgfeWh/pFGkGVtfOvaXmxFzrfif0b+2B3x56kFdfAprNvcCvIvfFks8xeeQYRibKSMzrOG2Wu8D1UeyBbWfyAhhOClKbTWLnE7/8Vwa5esZFoGJIvS8JBb/QfVdN4WifsLJXsEW4Ydr84dyfqokA9rqwUotDJPa+3SHD2pZG6FTGD4ewuxdJvyJxTGJlXkCXuik05cafe36/0+5Yl1w7OzBzAiS1g5Vp+qrcDLihoPjvCzufmbt/ecjHWHT0uHd9UTSu1wmpXaTDOZJf30advg1FWJslzBQeNBKh0ZY/+Zgw9tRqsLPPqIdj9avqgOeGfdVaZmAe15sL3UaeacaPcvQl3XgvxE/4FTpR9mMdSCLYIraylcfGpPQr1Wl3UUAhf/xBLIdhnmjAzvSqx9+7cPyPl6I1axOkXRb4e1SIw9Izq+lFf+U54lU/IoIyc4SiG6n6frzgZIwOKYNLOwfmPhEE37QPb+0eRhTz0R9Kb7m099iPVfYo0Ul5f0NWPyJD3avwDr8GSe6XC74wfFnVboA6bTIwWJzRq7X+qFTIkJdHsAdRysjsD6BenzFWLSP01NOO0v4DED0A/h++VQerlDqbgCj0FjbfSuxXNrLd4GmoRyVA1hkq0rdc1vg=
