@@ -1,7 +1,7 @@
 # Gigigo GGGLib
 
-[![Build Status](https://travis-ci.org/Gigigo-Android-Devs/gigigo-ggglib-library-android.svg?branch=master)](https://travis-ci.org/Gigigo-Android-Devs/gigigo-ggglib-library-android) 
-[![](https://jitpack.io/v/Gigigo-Android-Devs/gigigo-ggglib-library-android.svg)](https://jitpack.io/#Gigigo-Android-Devs/gigigo-ggglib-library-android)
+[![Build Status](https://travis-ci.org/gigigoapps/gigigo-android-lib.svg?branch=master)](https://travis-ci.org/gigigoapps/gigigo-android-lib) 
+[![](https://jitpack.io/v/gigigoapps/gigigo-android-lib.svg)](https://jitpack.io/#gigigoapps/gigigo-android-lib)
 
 This is a suite with several java and android utilities for developing apps faster in Gigigo
 
