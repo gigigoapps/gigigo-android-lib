@@ -1,10 +1,10 @@
 package com.gigigo.ggglib.logger;
 
-import com.gigigo.ggglib.logger.GGGLogImpl;
-import com.gigigo.ggglib.logger.LogProcessor;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 public class LogProcessorTest {
 
@@ -12,8 +12,8 @@ public class LogProcessorTest {
 
     LogProcessor logProcessor = new LogProcessor(true);
 
-    String tag =  "TAG";
-    String text =  "TEXT";
+    String tag = "TAG";
+    String text = "TEXT";
 
     String processedTag = logProcessor.processTagToShow(tag);
     String processedText = logProcessor.processTextToShow(text, 0);
@@ -21,15 +21,14 @@ public class LogProcessorTest {
     assertEquals(tag, processedTag);
     assertNotEquals(text, processedText);
     assertTrue(processedText.contains(text) && processedText.contains(getClass().getSimpleName()));
-
   }
 
   @Test public void logProcessorWithoutTraceTest() throws Exception {
 
     LogProcessor logProcessor = new LogProcessor(false);
 
-    String tag =  "TAG";
-    String text =  "TEXT";
+    String tag = "TAG";
+    String text = "TEXT";
 
     String processedTag = logProcessor.processTagToShow(tag);
     String processedText = logProcessor.processTextToShow(text, 0);
@@ -54,6 +53,7 @@ public class LogProcessorTest {
     processedText = logProcessor.processTextToShow(null, 0);
 
     assertNotEquals(processedTag, GGGLogImpl.class.getSimpleName());
-    assertTrue(processedText.contains("null") && processedText.contains(getClass().getSimpleName()));
+    assertTrue(
+        processedText.contains("null") && processedText.contains(getClass().getSimpleName()));
   }
 }

@@ -18,36 +18,34 @@
 
 package com.gigigo.ggglib.logger;
 
-
 public class LogProcessor {
 
   private InvokerInspector invokerInspector = null;
 
   public LogProcessor(boolean showTrace) {
-    if (showTrace){
+    if (showTrace) {
       invokerInspector = new InvokerInspector();
     }
   }
 
   public String processTextToShow(String text, int stackLevels) {
-    if (invokerInspector!=null){
-      invokerInspector.calculateInvoker(stackLevels+1, LogProcessor.class);
+    if (invokerInspector != null) {
+      invokerInspector.calculateInvoker(stackLevels + 1, LogProcessor.class);
       return invokerInspector.obtainInvokerLine() + "::" + text;
-    }else{
+    } else {
       return text;
     }
   }
 
   public String processTagToShow(String tag) {
-    if (tag == null){
-      if (invokerInspector!=null){
+    if (tag == null) {
+      if (invokerInspector != null) {
         return invokerInspector.obtainInvokerClassName();
-      }else{
+      } else {
         return GGGLogImpl.class.getSimpleName();
       }
-    }else{
+    } else {
       return tag;
     }
   }
-
 }

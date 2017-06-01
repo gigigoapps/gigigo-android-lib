@@ -41,5 +41,4 @@ public class StringUtilsTest {
     String expected = "";
     assertEquals(expected, actual);
   }
-
 }

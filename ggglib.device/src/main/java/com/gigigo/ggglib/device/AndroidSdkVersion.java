@@ -20,7 +20,10 @@ package com.gigigo.ggglib.device;
 
 import android.os.Build;
 
-public class AndroidSdkVersion {
+public final class AndroidSdkVersion {
+
+  private AndroidSdkVersion() {
+  }
 
   public static boolean hasFroyo8() {
     return Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO;

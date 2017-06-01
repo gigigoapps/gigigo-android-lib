@@ -1,16 +1,15 @@
 package com.gigigo.ggglib.logger;
 
 import android.util.Log;
-import com.gigigo.ggglib.logger.AndroidLogger;
-import com.gigigo.ggglib.logger.LogLevel;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AndroidLoggerUnitTest {
 
   /**
    * Test switch statement in deliverToAndroidLog method
+   *
    * @throws Exception
    */
   @Test public void loggingSwitch() throws Exception {

@@ -21,13 +21,17 @@ package com.gigigo.ggglib.device;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.net.wifi.WifiManager;
-import com.gigigo.ggglib.device.providers.AndroidSerialNumberProvider;
 import com.gigigo.ggglib.device.providers.AndroidSecureIdProvider;
+import com.gigigo.ggglib.device.providers.AndroidSerialNumberProvider;
 import com.gigigo.ggglib.device.providers.BluetoothMacProvider;
 import com.gigigo.ggglib.device.providers.HandsetProvider;
 import com.gigigo.ggglib.device.providers.WifiMacProvider;
 
-public class DeviceInfoProvider {
+public final class DeviceInfoProvider {
+
+  private DeviceInfoProvider() {
+
+  }
 
   public static String getHandset() {
     HandsetProvider handset = new HandsetProvider();

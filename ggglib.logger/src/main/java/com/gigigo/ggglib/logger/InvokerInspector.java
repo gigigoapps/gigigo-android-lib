@@ -31,43 +31,44 @@ public class InvokerInspector {
    */
   public void calculateInvoker(int stepsBack, Class gggLogClass) {
 
-    try{
-    String whoAmI = gggLogClass.getName();
-    Thread thread = Thread.currentThread();
-    StackTraceElement[] tracesArray = thread.getStackTrace();
+    try {
+      String whoAmI = gggLogClass.getName();
+      Thread thread = Thread.currentThread();
+      StackTraceElement[] tracesArray = thread.getStackTrace();
 
-    int LastAppearOfWhoIam = 0;
-    StackTraceElement stackTrace;
+      int lastAppearOfWhoIam = 0;
+      StackTraceElement stackTrace;
 
-    for (int j = 0; j < tracesArray.length; j++) {
-      stackTrace = tracesArray[j];
-      if (stackTrace.getClassName().equals(whoAmI)) {
-        LastAppearOfWhoIam = j;
-        break;
+      for (int j = 0; j < tracesArray.length; j++) {
+        stackTrace = tracesArray[j];
+        if (stackTrace.getClassName().equals(whoAmI)) {
+          lastAppearOfWhoIam = j;
+          break;
+        }
       }
-    }
 
-    if (LastAppearOfWhoIam != 0) {
-      StackTraceElement trace4Response = tracesArray[LastAppearOfWhoIam + stepsBack]; //+1 for this kind of implementation
-      this.callerInfo = new CallerInfo(trace4Response.getFileName(), trace4Response.getLineNumber());
-    }else{
-      this.callerInfo = new CallerInfo();
-    }
-
-    }catch (Exception e){
+      if (lastAppearOfWhoIam != 0) {
+        StackTraceElement trace4Response =
+            tracesArray[lastAppearOfWhoIam + stepsBack]; //+1 for this kind of implementation
+        this.callerInfo =
+            new CallerInfo(trace4Response.getFileName(), trace4Response.getLineNumber());
+      } else {
+        this.callerInfo = new CallerInfo();
+      }
+    } catch (Exception e) {
       this.callerInfo = new CallerInfo();
     }
   }
 
   public String obtainInvokerClassName() {
-    if (callerInfo == null){
+    if (callerInfo == null) {
       callerInfo = new CallerInfo();
     }
     return callerInfo.getClassName();
   }
 
   public String obtainInvokerLine() {
-    if (callerInfo == null){
+    if (callerInfo == null) {
       callerInfo = new CallerInfo();
     }
     return callerInfo.obtainlink();

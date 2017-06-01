@@ -18,7 +18,6 @@
 
 package com.gigigo.ggglib.logger;
 
-
 public class CallerInfo {
 
   private static final String NOT_FOUND = "NotFound";
@@ -27,7 +26,7 @@ public class CallerInfo {
 
   private int classLineNumber;
 
-  public CallerInfo(){
+  public CallerInfo() {
     className = NOT_FOUND;
     classLineNumber = 0;
   }
@@ -41,7 +40,7 @@ public class CallerInfo {
     return className;
   }
 
-  public String obtainlink(){
+  public String obtainlink() {
     return "(" + className + ":" + classLineNumber + ")";
   }
 }

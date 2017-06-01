@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.gigigoapps'
+group = 'com.github.gigigoapps'
 
 android {
   compileSdkVersion parent.ext.androidCompileSdkVersion

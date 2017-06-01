@@ -18,35 +18,30 @@
 
 package com.gigigo.ggglib.utils.matchers;
 
+import java.util.Date;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
-import java.util.Date;
-
 public class IsDateEqualTo extends BaseMatcher<Date> {
 
-    private final Date expectedValue;
+  private final Date expectedValue;
 
-    public IsDateEqualTo(Date expectedValue) {
-        this.expectedValue = expectedValue;
-    }
+  public IsDateEqualTo(Date expectedValue) {
+    this.expectedValue = expectedValue;
+  }
 
-    @Override
-    public boolean matches(Object item) {
-        boolean areEquals = Math.abs(expectedValue.getTime() - ((Date) item).getTime()) < 1000;
-        return areEquals;
-    }
+  @Factory public static Matcher<Date> isDateEqualTo(Date t) {
+    return new IsDateEqualTo(t);
+  }
 
-    @Override
-    public void describeTo(Description description) {
-        description.appendText(expectedValue.toString());
-    }
+  @Override public boolean matches(Object item) {
+    boolean areEquals = Math.abs(expectedValue.getTime() - ((Date) item).getTime()) < 1000;
+    return areEquals;
+  }
 
-    @Factory
-    public static Matcher<Date>
-    isDateEqualTo(Date t) {
-        return new IsDateEqualTo(t);
-    }
+  @Override public void describeTo(Description description) {
+    description.appendText(expectedValue.toString());
+  }
 }

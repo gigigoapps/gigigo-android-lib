@@ -20,10 +20,13 @@ package com.gigigo.ggglib.logger;
 
 import android.util.Log;
 
+public final class AndroidLogger {
 
-public class AndroidLogger {
+  private AndroidLogger() {
+  }
+
   public static int deliverToAndroidLog(String text, LogLevel logLevel, String tag) {
-    switch (logLevel.getLogLevelValue()){
+    switch (logLevel.getLogLevelValue()) {
       case Log.WARN:
         Log.w(tag, text);
         return Log.WARN;
@@ -39,7 +42,7 @@ public class AndroidLogger {
       case Log.ASSERT:
       case Log.DEBUG:
         Log.d(tag, text);
-      return Log.DEBUG;
+        return Log.DEBUG;
       default:
         Log.wtf(tag, text);
         return -1;
