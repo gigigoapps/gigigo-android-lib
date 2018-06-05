@@ -27,8 +27,8 @@ buildscript {
 
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.3'
-    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    classpath 'com.android.tools.build:gradle:3.1.2'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }
@@ -38,10 +38,10 @@ allprojects {
 
   ext {
     // Android config
-    androidCompileSdkVersion = 23
-    androidBuildToolsVersion = '24.0.3'
-    androidMinSdkVersion = 10
-    androidTargetSdkVersion = 23
+    androidCompileSdkVersion = 27
+    androidBuildToolsVersion = '27.0.3'
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 27
   }
 
   repositories {
